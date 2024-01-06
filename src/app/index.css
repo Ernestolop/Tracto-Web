@@ -1,0 +1,122 @@
+/* Header */
+.header{
+    background-color: var(--color-primary);
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;    
+    align-items: center;
+    color : var(--black);
+    padding: var(--space-sm) var(--space-md);
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-xxs);
+}
+
+@media (min-width: 768px) {
+    .nav__hamburger{
+        display: none;
+    }
+}
+
+.nav__item{
+    display: flex;
+    gap: var(--space-xxs);
+}
+
+.nav__item--md{
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .nav__item--md{
+        display: flex;
+    }
+}
+
+.nav__link{
+    padding: var(--space-xxs);
+    border-radius: var(--space-xxs);
+    font-weight: bold;
+}
+
+.nav__link:hover{
+    background-color: var(--color-secondary);
+    color: var(--white);
+}
+
+/* Formulario de PosVenta */
+.ctcform{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    max-width: 450px;
+    margin: auto;
+}
+
+@media (min-width: 768px) {
+    .ctcform{
+        display: grid;
+        grid-template-areas: 
+            "name company"
+            "email phone"
+            "city city"
+            "options options";
+        max-width: 950px;
+    }
+}
+
+.ctcform__field{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xxs);
+}
+
+@media (min-width: 768px) {
+    .ctcform__field--name{
+        grid-area: name;
+    }
+    .ctcform__field--company{
+        grid-area: company;
+    }
+    .ctcform__field--email{
+        grid-area: email;
+    }
+    .ctcform__field--phone{
+        grid-area: phone;
+    }
+    .ctcform__field--city{
+        grid-area: city;
+    }
+    .ctcform__field--options{
+        grid-area: options;
+    }
+}
+
+.ctcform__input{
+    padding: var(--space-xs);
+    border-radius: var(--space-xxs);
+    border: 1px solid var(--black);
+    width: 100%;
+}
+
+.ctcform__options{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ctcform__option{
+    display: flex;
+    align-items: center;
+}
+
+.ctcform__radio{
+    margin-inline-end: var(--space-xxs);
+}

@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export const NavBar = () => {
     return (
-        <div className='navbar'>
+        <div className='navbar mw-950'>
             <Link href="/" className='navbar__logo'>LOGO DE TRACTO</Link>
             <nav className='nav'>
                 <div className='nav__item'>
