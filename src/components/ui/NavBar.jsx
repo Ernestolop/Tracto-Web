@@ -4,7 +4,14 @@ import Image from 'next/image';
 export const NavBar = () => {
     return (
         <div className='navbar mw-950'>
-            <Link href="/" className='navbar__logo'>LOGO DE TRACTO</Link>
+            <Link href="/" className='navbar__logo'>
+                <Image
+                    src="/images/tracto_agro_vial_logo.png"
+                    alt="Logo de tracto agro vial"
+                    width={200}
+                    height={36}
+                />
+            </Link>
             <nav className='nav'>
                 <div className='nav__item'>
                     <Link href="/" className='nav__link'>

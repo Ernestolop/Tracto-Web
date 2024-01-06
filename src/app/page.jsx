@@ -5,7 +5,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main>
+    <main className="mw-950">
       <h1>Inicio</h1>
     </main>
   )

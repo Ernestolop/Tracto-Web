@@ -9,11 +9,11 @@ export const WorkForm = () => {
     const [file, setFile] = useState('');
 
     return (
-        <form className="ctcform">
-            <div className="ctcform__field">
-                <label htmlFor="name" className="ctcform__label">Nombre y Apellido completo*</label>
+        <form className="form form--workhere">
+            <div className="form__field">
+                <label htmlFor="name" className="form__label">Nombre y Apellido completo*</label>
                 <input
-                    className="ctcform__input"
+                    className="form__input"
                     id="name"
                     name="name"
                     type="text"
@@ -22,10 +22,10 @@ export const WorkForm = () => {
                     onChange={e => setName(e.target.value)}
                 />
             </div>
-            <div className="ctcform__field">
-                <label htmlFor="email" className="ctcform__label">Correo electrónico*</label>
+            <div className="form__field">
+                <label htmlFor="email" className="form__label">Correo electrónico*</label>
                 <input
-                    className="ctcform__input"
+                    className="form__input"
                     id="email"
                     name="email"
                     type="email"
@@ -34,10 +34,10 @@ export const WorkForm = () => {
                     onChange={e => setEmail(e.target.value)}
                 />
             </div>
-            <div className="ctcform__field">
-                <label htmlFor="position" className="ctcform__label">Departamento al que se postula</label>
+            <div className="form__field">
+                <label htmlFor="position" className="form__label">Departamento al que se postula</label>
                 <input
-                    className="ctcform__input"
+                    className="form__input"
                     id="position"
                     name="position"
                     type="text"
@@ -46,10 +46,10 @@ export const WorkForm = () => {
                     onChange={e => setPosition(e.target.value)}
                 />
             </div>
-            <div className="ctcform__field">
-                <label htmlFor="cv" className="ctcform__label">Adjuntar CV*</label>
+            <div className="form__field">
+                <label htmlFor="cv" className="form__label">Adjuntar CV*</label>
                 <input
-                    className="ctcform__input"
+                    className="form__input"
                     id="cv"
                     name="cv"
                     type="file"
@@ -58,7 +58,7 @@ export const WorkForm = () => {
                     onChange={e => setFile(e.target.value)}
                 />
             </div>
-            <input type="submit" value="Enviar" className="ctcform__field--submit ctcform__submit" />
+            <input type="submit" value="Enviar" className="form__field--submit form__submit" />
         </form>
     )
 }

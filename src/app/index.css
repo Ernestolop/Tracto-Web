@@ -51,18 +51,24 @@
     color: var(--white);
 }
 
-/* Formulario de PosVenta */
-.ctcform{
+/* Formulario */
+.form--workhere{
+ display: flex;
+ flex-direction: column;
+
+}
+
+.form__grid{
+    max-width: 450px;
+    margin: var(--space-md) auto;
+    padding-inline: var(--space-md);
     display: flex;
     flex-direction: column;
     gap: var(--space-sm);
-    padding: var(--space-md);
-    max-width: 450px;
-    margin: auto;
 }
 
 @media (min-width: 768px) {
-    .ctcform{
+    .form__grid{
         display: grid;
         grid-template-areas: 
             "name company"
@@ -73,55 +79,55 @@
     }
 }
 
-.ctcform__field{
+.form__field{
     display: flex;
     flex-direction: column;
     gap: var(--space-xxs);
 }
 
 @media (min-width: 768px) {
-    .ctcform__field--name{
+    .form__field--name{
         grid-area: name;
     }
-    .ctcform__field--company{
+    .form__field--company{
         grid-area: company;
     }
-    .ctcform__field--email{
+    .form__field--email{
         grid-area: email;
     }
-    .ctcform__field--phone{
+    .form__field--phone{
         grid-area: phone;
     }
-    .ctcform__field--city{
+    .form__field--city{
         grid-area: city;
     }
-    .ctcform__field--options{
+    .form__field--options{
         grid-area: options;
     }
 }
 
-.ctcform__input{
+.form__input{
     padding: var(--space-xs);
     border-radius: var(--space-xxs);
     border: 1px solid var(--black);
     width: 100%;
 }
 
-.ctcform__options{
+.form__options{
     display: flex;
     justify-content: space-between;
 }
 
-.ctcform__option{
+.form__option{
     display: flex;
     align-items: center;
 }
 
-.ctcform__radio{
+.form__radio{
     margin-inline-end: var(--space-xxs);
 }
 
-.ctcform__submit{
+.form__submit{
     padding: var(--space-xs);
     border-radius: var(--space-xxs);
     border: none;
@@ -129,7 +135,17 @@
     color: var(--white);
     font-weight: bold;
     cursor: pointer;
+    display: block;
+    width: 80%;
+    margin: var(--space-md) auto;
 }
+
+@media (min-width: 576px) {
+    .form__submit{
+        width: 50%;
+    }
+}
+
 
 /* Tracto Route */
 

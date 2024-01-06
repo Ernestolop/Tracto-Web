@@ -11,97 +11,99 @@ export const ContactForm = () => {
     const [productType, setProductType] = useState('');
 
     return (
-        <form className="ctcform">
-            <div className="ctcform__field ctcform__field--name">
-                <label htmlFor="name" className="ctcform__label">Nombre y Apellido*</label>
-                <input
-                    className="ctcform__input"
-                    id="name"
-                    name="name"
-                    type="text"
-                    placeholder="Tu nombre y Apellido"
-                    value={name}
-                    onChange={e => setName(e.target.value)}
-                />
-            </div>
-            <div className="ctcform__field ctcform__field--company">
-                <label htmlFor="company" className="ctcform__label">Empresa</label>
-                <input
-                    className="ctcform__input"
-                    id="company"
-                    name="company"
-                    type="text"
-                    placeholder="Nombre de la empresa"
-                    value={company}
-                    onChange={e => setCompany(e.target.value)}
-                />
-            </div>
-            <div className="ctcform__field ctcform__field--email">
-                <label htmlFor="email" className="ctcform__label">Email*</label>
-                <input
-                    className="ctcform__input"
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="Tu email"
-                    value={email}
-                    onChange={e => setEmail(e.target.value)}
-                />
-            </div>
-            <div className="ctcform__field ctcform__field--phone">
-                <label htmlFor="phone" className="ctcform__label">Celular*</label>
-                <input
-                    className="ctcform__input"
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    placeholder="Tu celular"
-                    value={phone}
-                    onChange={e => setPhone(e.target.value)}
-                />
-            </div>
-            <div className="ctcform__field ctcform__field--city">
-                <label htmlFor="city" className="ctcform__label">Ciudad*</label>
-                <input
-                    className="ctcform__input"
-                    id="city"
-                    name="city"
-                    type="text"
-                    placeholder="Tu ciudad"
-                    value={city}
-                    onChange={e => setCity(e.target.value)}
-                />
-            </div>
-            <div className="ctcform__field ctcform__field--options">
-                <span className="ctcform__label">Seleccione el tipo de producto*</span>
-                <div className="ctcform__options">
-                    <div className="ctcform__option">
-                        <input
-                            className="ctcform__radio"
-                            type="radio"
-                            name="productType"
-                        />
-                        <span>Tractores</span>
-                    </div>
-                    <div className="ctcform__option">
-                        <input
-                            className="ctcform__radio"
-                            type="radio"
-                            name="productType"
-                        />
-                        <span>Máquina vial</span>
-                    </div>
-                    <div className="ctcform__option">
-                        <input
-                            className="ctcform__radio"
-                            type="radio"
-                            name="productType"
-                        />
-                        <span>Implementos</span>
+        <form className="form">
+            <div className='form__grid'>
+                <div className="form__field form__field--name">
+                    <label htmlFor="name" className="form__label">Nombre y Apellido*</label>
+                    <input
+                        className="form__input"
+                        id="name"
+                        name="name"
+                        type="text"
+                        placeholder="Tu nombre y Apellido"
+                        value={name}
+                        onChange={e => setName(e.target.value)}
+                    />
+                </div>
+                <div className="form__field form__field--company">
+                    <label htmlFor="company" className="form__label">Empresa</label>
+                    <input
+                        className="form__input"
+                        id="company"
+                        name="company"
+                        type="text"
+                        placeholder="Nombre de la empresa"
+                        value={company}
+                        onChange={e => setCompany(e.target.value)}
+                    />
+                </div>
+                <div className="form__field form__field--email">
+                    <label htmlFor="email" className="form__label">Email*</label>
+                    <input
+                        className="form__input"
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="Tu email"
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                    />
+                </div>
+                <div className="form__field form__field--phone">
+                    <label htmlFor="phone" className="form__label">Celular*</label>
+                    <input
+                        className="form__input"
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="Tu celular"
+                        value={phone}
+                        onChange={e => setPhone(e.target.value)}
+                    />
+                </div>
+                <div className="form__field form__field--city">
+                    <label htmlFor="city" className="form__label">Ciudad*</label>
+                    <input
+                        className="form__input"
+                        id="city"
+                        name="city"
+                        type="text"
+                        placeholder="Tu ciudad"
+                        value={city}
+                        onChange={e => setCity(e.target.value)}
+                    />
+                </div>
+                <div className="form__field form__field--options">
+                    <span className="form__label">Seleccione el tipo de producto*</span>
+                    <div className="form__options">
+                        <div className="form__option">
+                            <input
+                                className="form__radio"
+                                type="radio"
+                                name="productType"
+                            />
+                            <span>Tractores</span>
+                        </div>
+                        <div className="form__option">
+                            <input
+                                className="form__radio"
+                                type="radio"
+                                name="productType"
+                            />
+                            <span>Máquina vial</span>
+                        </div>
+                        <div className="form__option">
+                            <input
+                                className="form__radio"
+                                type="radio"
+                                name="productType"
+                            />
+                            <span>Implementos</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <input type="submit" value="Enviar" className="ctcform__submit" />
+            <input type="submit" value="Enviar" className="form__submit" />
         </form>
     )
 }
