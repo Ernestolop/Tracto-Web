@@ -101,6 +101,7 @@ export const ContactForm = () => {
                     </div>
                 </div>
             </div>
+            <input type="submit" value="Enviar" className="ctcform__submit" />
         </form>
     )
 }

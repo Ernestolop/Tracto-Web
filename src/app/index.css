@@ -120,3 +120,79 @@
 .ctcform__radio{
     margin-inline-end: var(--space-xxs);
 }
+
+.ctcform__submit{
+    padding: var(--space-xs);
+    border-radius: var(--space-xxs);
+    border: none;
+    background-color: var(--color-primary);
+    color: var(--white);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Tracto Route */
+
+@media (min-width: 768px) {
+    .year{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        position: relative;
+    }
+    .year__card--end{
+        order: 1;
+    }
+    /* que sea una linea del color secundario que se extienda por todo el alto en el medio */
+    .year::after{
+        content: "";
+        display: block;
+        width: 5px;
+        background-color: var(--color-secondary);
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    /* hacer otro elemento que sea un circulo del color secundario que se posicione en el centro arrriba */
+    .year::before{
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-color: var(--color-secondary);
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.year__title{
+    display: block; 
+    text-align: center;
+}
+
+.year__content{
+    text-align: center;
+}
+
+
+/* Tracto branches */
+.location{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.location__map{
+    margin: auto;
+}
+
+@media (min-width: 768px) {
+    .location{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-sm);
+    }
+}
