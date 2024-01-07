@@ -16,6 +16,7 @@ export const WorkForm = () => {
                 <div className="form__field">
                     <label htmlFor="name" className="form__label">Nombre y Apellido completo*</label>
                     <input
+                        autoComplete="off"
                         className="form__input"
                         id="name"
                         name="name"
@@ -28,6 +29,7 @@ export const WorkForm = () => {
                 <div className="form__field">
                     <label htmlFor="email" className="form__label">Correo electrónico*</label>
                     <input
+                        autoComplete="off"
                         className="form__input"
                         id="email"
                         name="email"
@@ -40,6 +42,7 @@ export const WorkForm = () => {
                 <div className="form__field">
                     <label htmlFor="position" className="form__label">Departamento al que se postula</label>
                     <input
+                        autoComplete="off"
                         className="form__input"
                         id="position"
                         name="position"

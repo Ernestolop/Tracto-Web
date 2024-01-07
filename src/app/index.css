@@ -73,6 +73,12 @@
     color: var(--white);
 }
 
+/* Hero */
+.hero{
+    width: 100%;
+    height: auto;
+}
+
 /* Formulario */
 .form--workhere{
     padding: var(--space-md);
@@ -238,6 +244,7 @@
 
 .year__image{
     width: 100%;
+    height: auto;
     max-width: 600px;
     display: block;
     margin-inline: auto;

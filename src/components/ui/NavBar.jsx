@@ -14,7 +14,7 @@ export const NavBar = () => {
 
     return (
         <div className='navbar mw-950'>
-            <Link href="/" className='navbar__logo'>
+            <Link onClick={() => setMenuOpen(false)} href="/" className='navbar__logo'>
                 <Image
                     src="/images/tracto_agro_vial_logo.png"//TODO: utilizar el url absoluto
                     alt="Logo de tracto agro vial"
@@ -42,13 +42,13 @@ export const NavBar = () => {
                 </button>
                 <ul className={`nav__ul ${menuOpen ? '' : 'nav__ul--mdhide'}`}>
                     <li>
-                        <Link href="/" className='nav__link'>Inicio</Link>
+                        <Link onClick={() => setMenuOpen(false)} href="/" className='nav__link'>Inicio</Link>
                     </li>
                     <li>
-                        <Link href="/institucional" className='nav__link'>Institucional</Link>
+                        <Link onClick={() => setMenuOpen(false)} href="/institucional" className='nav__link'>Institucional</Link>
                     </li>
                     <li>
-                        <Link href="/posventa" className='nav__link'>PosVenta</Link>
+                        <Link onClick={() => setMenuOpen(false)} href="/posventa" className='nav__link'>PosVenta</Link>
                     </li>
                 </ul>
             </nav>

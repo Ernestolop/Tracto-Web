@@ -14,7 +14,7 @@ export default function Institucional() {
         <TractoRoute />
       </main>
       <section>
-        <h2 className="h1">Sé parte de este gran equipo humano.</h2>
+        <h2 className="h1">Se parte de este gran equipo humano.</h2>
         <WorkForm />
       </section>
       <section>

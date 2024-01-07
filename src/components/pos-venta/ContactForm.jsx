@@ -17,6 +17,7 @@ export const ContactForm = () => {
                 <div className="form__field form__field--name">
                     <label htmlFor="name" className="form__label">Nombre y Apellido*</label>
                     <input
+                        autoComplete="off"
                         className="form__input"
                         id="name"
                         name="name"
@@ -29,6 +30,7 @@ export const ContactForm = () => {
                 <div className="form__field form__field--company">
                     <label htmlFor="company" className="form__label">Empresa</label>
                     <input
+                        autoComplete="off"
                         className="form__input"
                         id="company"
                         name="company"
@@ -41,6 +43,7 @@ export const ContactForm = () => {
                 <div className="form__field form__field--email">
                     <label htmlFor="email" className="form__label">Email*</label>
                     <input
+                        autoComplete="off"
                         className="form__input"
                         id="email"
                         name="email"
@@ -53,6 +56,7 @@ export const ContactForm = () => {
                 <div className="form__field form__field--phone">
                     <label htmlFor="phone" className="form__label">Celular*</label>
                     <input
+                        autoComplete="off"
                         className="form__input"
                         id="phone"
                         name="phone"
@@ -65,6 +69,7 @@ export const ContactForm = () => {
                 <div className="form__field form__field--city">
                     <label htmlFor="city" className="form__label">Ciudad*</label>
                     <input
+                        autoComplete="off"
                         className="form__input"
                         id="city"
                         name="city"
