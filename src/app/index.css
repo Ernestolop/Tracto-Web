@@ -25,17 +25,17 @@
     }
 }
 
-.nav__item{
+.nav__ul{
     display: flex;
     gap: var(--space-xxs);
 }
 
-.nav__item--md{
+.nav__ul--md{
     display: none;
 }
 
 @media (min-width: 768px) {
-    .nav__item--md{
+    .nav__ul--md{
         display: flex;
     }
 }

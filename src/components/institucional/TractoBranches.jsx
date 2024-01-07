@@ -11,32 +11,49 @@ export const TractoBranches = () => {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"></iframe>
             <div className="branches">
-                <div className="branches__container">
-                    <div className="branches__branch">
-                        <h3 className="branch__city">Asunción</h3>
-                        <p className="branches__address">Avda. Eusebio Ayala 1947.</p>
-                        <p className="branches__departament">Central.</p>
-                        <p className="branches__tel"><span className="branches__tellabel">Tel:</span>(021) 202 913 / 15</p>
-                    </div>
-                    <div className="branches__branch">
-                        <h3 className="branch__city">Asunción</h3>
-                        <p className="branches__address">Avda. Eusebio Ayala 1947.</p>
-                        <p className="branches__departament">Central.</p>
-                        <p className="branches__tel"><span className="branches__tellabel">Tel:</span>(021) 202 913 / 15</p>
-                    </div>
-                    <div className="branches__branch">
-                        <h3 className="branch__city">Asunción</h3>
-                        <p className="branches__address">Avda. Eusebio Ayala 1947.</p>
-                        <p className="branches__departament">Central.</p>
-                        <p className="branches__tel"><span className="branches__tellabel">Tel:</span>(021) 202 913 / 15</p>
-                    </div>
-                    <div className="branches__branch branches__branch--last">
-                        <h3 className="branch__city">Asunción</h3>
-                        <p className="branches__address">Avda. Eusebio Ayala 1947.</p>
-                        <p className="branches__departament">Central.</p>
-                        <p className="branches__tel"><span className="branches__tellabel">Tel:</span>(021) 202 913 / 15</p>
-                    </div>
-                </div>
+                <ul className="branches__container">
+                    <li>
+                        <section className="branches__branch">
+                            <h3 className="branch__city">Asunción</h3>
+                            <p className="branches__address">Avda. Eusebio Ayala 1947.</p>
+                            <p className="branches__departament">Central.</p>
+                            <p className="branches__tel"><span className="branches__tellabel">Tel:</span>(021) 202 913 / 15</p>
+                        </section>
+                    </li>
+                    <li>
+                        <section className="branches__branch">
+                            <h3 className="branch__city">Asunción</h3>
+                            <p className="branches__address">Avda. Eusebio Ayala 1947.</p>
+                            <p className="branches__departament">Central.</p>
+                            <p className="branches__tel"><span className="branches__tellabel">Tel:</span>(021) 202 913 / 15</p>
+                        </section>
+                    </li>
+                    <li>
+                        <section className="branches__branch">
+                            <h3 className="branch__city">Asunción</h3>
+                            <p className="branches__address">Avda. Eusebio Ayala 1947.</p>
+                            <p className="branches__departament">Central.</p>
+                            <p className="branches__tel"><span className="branches__tellabel">Tel:</span>(021) 202 913 / 15</p>
+                        </section>
+                    </li>
+                    <li>
+                        <section className="branches__branch">
+                            <h3 className="branch__city">Asunción</h3>
+                            <p className="branches__address">Avda. Eusebio Ayala 1947.</p>
+                            <p className="branches__departament">Central.</p>
+                            <p className="branches__tel"><span className="branches__tellabel">Tel:</span>(021) 202 913 / 15</p>
+                        </section>
+                    </li>
+                    <li>
+                        <section className="branches__branch">
+                            <h3 className="branch__city">Asunción</h3>
+                            <p className="branches__address">Avda. Eusebio Ayala 1947.</p>
+                            <p className="branches__departament">Central.</p>
+                            <p className="branches__tel"><span className="branches__tellabel">Tel:</span>(021) 202 913 / 15</p>
+                        </section>
+                    </li>
+
+                </ul>
             </div>
         </div>
     )
