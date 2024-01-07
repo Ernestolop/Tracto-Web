@@ -8,10 +8,11 @@ export const ContactForm = () => {
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [city, setCity] = useState('');
-    const [productType, setProductType] = useState('');
+
+    const handleSubmit = e => { e.preventDefault(); }
 
     return (
-        <form className="form">
+        <form onSubmit={handleSubmit} className="form">
             <div className='form__grid'>
                 <div className="form__field form__field--name">
                     <label htmlFor="name" className="form__label">Nombre y Apellido*</label>
@@ -103,7 +104,7 @@ export const ContactForm = () => {
                     </div>
                 </div>
             </div>
-            <input type="submit" value="Enviar" className="form__submit" />
+            <input onSubmit={handleSubmit} type="submit" value="Enviar" className="form__submit" />
         </form>
     )
 }

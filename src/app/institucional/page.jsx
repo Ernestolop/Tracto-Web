@@ -10,7 +10,7 @@ export default function Institucional() {
     <main className="mw-950">
       <h2 className="h1">Orgullosos de nuestro crecimiento, compartimos contigo nuestro recorrido.</h2>
       <TractoRoute />
-      <h2 className="h1">Se parte de este gran equipo humano.</h2>
+      <h2 className="h1">Sé parte de este gran equipo humano.</h2>
       <WorkForm />
       <h2 className="h1">Elegí la que esté más cerca y visítanos, contamos con cobertura total.</h2>
       <TractoBranches />

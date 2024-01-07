@@ -5,11 +5,12 @@ export const TractoRoute = () => {
         <>
             <div className="year">
                 <div className="year__card">
-                    <span className="year__title">2023</span>
+                    <h3 className="year__title">2023</h3>
                     <Image
                         src="/images/routetracto.jpg"
                         alt="tracto"
                         width={400}
+                        className='year__image'
                         height={300}
                     />
                 </div>
@@ -18,13 +19,14 @@ export const TractoRoute = () => {
                 </div>
             </div>
 
-            <div className="year">
+            <div className="year year--last">
                 <div className="year__card year__card--end">
-                    <span className="year__title">2022</span>
+                    <h3 className="year__title">2022</h3>
                     <Image
                         src="/images/routetracto.jpg"
                         alt="tracto"
                         width={400}
+                        className='year__image'
                         height={300}
                     />
                 </div>
