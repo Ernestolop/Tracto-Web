@@ -5,7 +5,7 @@ export const TractoRoute = () => {
         <>
             <section className="year">
                 <div className="year__card">
-                    <h3 className="year__title">2023</h3>
+                    <h2 className="year__title">2023</h2>
                     <Image
                         src="/images/routetracto.jpg"
                         alt="tracto"
@@ -21,7 +21,7 @@ export const TractoRoute = () => {
 
             <section className="year year--last">
                 <div className="year__card year__card--end">
-                    <h3 className="year__title">2022</h3>
+                    <h2 className="year__title">2022</h2>
                     <Image
                         src="/images/routetracto.jpg"
                         alt="tracto"

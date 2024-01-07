@@ -9,6 +9,7 @@ export const TractoBranches = () => {
                 className="location__map"
                 allowFullScreen=""
                 loading="lazy"
+                title="Mapa de sucursales de Tracto Agro Vial"
                 referrerPolicy="no-referrer-when-downgrade"></iframe>
             <div className="branches">
                 <ul className="branches__container">

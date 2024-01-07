@@ -23,7 +23,7 @@ export const NavBar = () => {
                 />
             </Link>
             <nav className='nav'>
-                <button onClick={toggleMenu} type='button'>
+                <button onClick={toggleMenu} type='button' aria-label={`${menuOpen ? 'Close Menu' : 'Open Menu'}`}>
                     {
                         menuOpen ?
                             (
@@ -52,6 +52,6 @@ export const NavBar = () => {
                     </li>
                 </ul>
             </nav>
-        </div>
+        </div >
     )
 }
