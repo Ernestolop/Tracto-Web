@@ -13,6 +13,10 @@
     --color-secondary: #e01717;
     --black: #000000;
     --white: #ffffff;
+    --color-alert-error: #960505;
+    --color-alert-error-light: #fa2c2c;
+    --color-alert-success: #0f9605;
+    --color-alert-success-light: #2cfa2c;
 
     /* Tamaños de Fuentes */
     --size-xxs: 0.5rem;
@@ -33,6 +37,9 @@
     --space-xl: 1.875rem;
     --space-xxl: 2.1875rem;
     --space-xxxl:  3.75rem;
+
+    /* Tiempos */
+    --alert-time: 3000ms;
 }
 
 
