@@ -45,9 +45,7 @@
     .nav__ul{
         position: relative;
         flex-direction: row;
-        gap: var(--space-xxs);
         padding: 0;
-        gap: 0;
         width: auto;
     }
 }
