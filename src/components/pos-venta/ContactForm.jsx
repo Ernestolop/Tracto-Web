@@ -53,7 +53,6 @@ export const ContactForm = () => {
         }
         //Verificar si hay campos vacios
         if (emptyFields.length > 0) {
-            console.log(emptyFields);
             const firstEmptyField = emptyFields[0];
             setFieldToFocus(firstEmptyField);
             handleAlert('Por favor complete todos los campos obligatorios.', 'error');
