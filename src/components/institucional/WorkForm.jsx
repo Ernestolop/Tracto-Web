@@ -1,69 +1,63 @@
 'use client'
 import { useState } from 'react';
+import { FormField } from '@/components'
 
 export const WorkForm = () => {
 
-    const [name, setName] = useState('');
-    const [position, setPosition] = useState('');
-    const [email, setEmail] = useState('');
-    const [file, setFile] = useState('');
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        position: '',
+        file: '',
+    });
+
+    const handleChange = e => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value })
+    }
 
     const handleSubmit = e => { e.preventDefault(); }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="form">
             <div className='form--workhere'>
-                <div className="form__field">
-                    <label htmlFor="name" className="form__label">Nombre y Apellido completo*</label>
-                    <input
-                        autoComplete="off"
-                        className="form__input"
-                        id="name"
-                        name="name"
-                        type="text"
-                        placeholder="Tu nombre y Apellido"
-                        value={name}
-                        onChange={e => setName(e.target.value)}
-                    />
-                </div>
-                <div className="form__field">
-                    <label htmlFor="email" className="form__label">Correo electrónico*</label>
-                    <input
-                        autoComplete="off"
-                        className="form__input"
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="Tu email"
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
-                    />
-                </div>
-                <div className="form__field">
-                    <label htmlFor="position" className="form__label">Departamento al que se postula</label>
-                    <input
-                        autoComplete="off"
-                        className="form__input"
-                        id="position"
-                        name="position"
-                        type="text"
-                        placeholder="Nombre de la empresa"
-                        value={position}
-                        onChange={e => setPosition(e.target.value)}
-                    />
-                </div>
-                <div className="form__field">
-                    <label htmlFor="cv" className="form__label">Adjuntar CV*</label>
-                    <input
-                        className="form__input form__input--file"
-                        id="cv"
-                        name="cv"
-                        type="file"
-                        placeholder="Carga tu CV"
-                        value={file}
-                        onChange={e => setFile(e.target.value)}
-                    />
-                </div>
+                <FormField
+                    inputId="name"
+                    label="Nombre y Apellido completo*"
+                    inputName="name"
+                    inputType="text"
+                    placeholder="Tu nombre y Apellido"
+                    value={formData.name}
+                    onChange={handleChange}
+                />
+                <FormField
+                    inputId="email"
+                    label="Correo electrónico*"
+                    inputName="email"
+                    inputType="email"
+                    placeholder="Tu email"
+                    value={formData.email}
+                    onChange={handleChange}
+                />
+                <FormField
+                    inputId="position"
+                    label="Departamento al que se postula"
+                    inputName="position"
+                    inputType="text"
+                    placeholder="Nombre de la empresa"
+                    value={formData.position}
+                    onChange={handleChange}
+                />
+                <FormField
+                    inputId="file"
+                    modifier="file"
+                    label="Adjuntar CV*"
+                    inputName="file"
+                    inputType="file"
+                    placeholder="Carga tu CV"
+                    value={formData.file}
+                    onChange={handleChange}
+                />
             </div>
             <input type="submit" value="Enviar" className="form__field--submit form__submit" />
         </form>

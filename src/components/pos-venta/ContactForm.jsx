@@ -1,84 +1,78 @@
 'use client'
 import { useState } from 'react';
+import { FormField } from '@/components'
 
 export const ContactForm = () => {
 
-    const [name, setName] = useState('');
-    const [company, setCompany] = useState('');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
-    const [city, setCity] = useState('');
+    const [formData, setFormData] = useState({
+        name: '',
+        company: '',
+        email: '',
+        phone: '',
+        city: '',
+        productType: '',
+    });
+
+    const handleChange = e => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value })
+    }
 
     const handleSubmit = e => { e.preventDefault(); }
 
     return (
         <form onSubmit={handleSubmit} className="form">
             <div className='form__grid'>
-                <div className="form__field form__field--name">
-                    <label htmlFor="name" className="form__label">Nombre y Apellido*</label>
-                    <input
-                        autoComplete="off"
-                        className="form__input"
-                        id="name"
-                        name="name"
-                        type="text"
-                        placeholder="Tu nombre y Apellido"
-                        value={name}
-                        onChange={e => setName(e.target.value)}
-                    />
-                </div>
-                <div className="form__field form__field--company">
-                    <label htmlFor="company" className="form__label">Empresa</label>
-                    <input
-                        autoComplete="off"
-                        className="form__input"
-                        id="company"
-                        name="company"
-                        type="text"
-                        placeholder="Nombre de la empresa"
-                        value={company}
-                        onChange={e => setCompany(e.target.value)}
-                    />
-                </div>
-                <div className="form__field form__field--email">
-                    <label htmlFor="email" className="form__label">Email*</label>
-                    <input
-                        autoComplete="off"
-                        className="form__input"
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="Tu email"
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
-                    />
-                </div>
-                <div className="form__field form__field--phone">
-                    <label htmlFor="phone" className="form__label">Celular*</label>
-                    <input
-                        autoComplete="off"
-                        className="form__input"
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        placeholder="Tu celular"
-                        value={phone}
-                        onChange={e => setPhone(e.target.value)}
-                    />
-                </div>
-                <div className="form__field form__field--city">
-                    <label htmlFor="city" className="form__label">Ciudad*</label>
-                    <input
-                        autoComplete="off"
-                        className="form__input"
-                        id="city"
-                        name="city"
-                        type="text"
-                        placeholder="Tu ciudad"
-                        value={city}
-                        onChange={e => setCity(e.target.value)}
-                    />
-                </div>
+                <FormField
+                    modifier="name"
+                    inputId="name"
+                    label="Nombre y Apellido*"
+                    inputName="name"
+                    inputType="text"
+                    placeholder="Tu nombre y Apellido"
+                    value={formData.name}
+                    onChange={handleChange}
+                />
+                <FormField
+                    modifier="company"
+                    inputId="company"
+                    label="Empresa"
+                    inputName="company"
+                    inputType="text"
+                    placeholder="Nombre de la empresa"
+                    value={formData.company}
+                    onChange={handleChange}
+                />
+                <FormField
+                    modifier="email"
+                    inputId="email"
+                    label="Email*"
+                    inputName="email"
+                    inputType="email"
+                    placeholder="Tu email"
+                    value={formData.email}
+                    onChange={handleChange}
+                />
+                <FormField
+                    modifier="phone"
+                    inputId="phone"
+                    label="Celular*"
+                    inputName="phone"
+                    inputType="tel"
+                    placeholder="Tu celular"
+                    value={formData.phone}
+                    onChange={handleChange}
+                />
+                <FormField
+                    modifier="city"
+                    inputId="city"
+                    label="Ciudad*"
+                    inputName="city"
+                    inputType="text"
+                    placeholder="Tu ciudad"
+                    value={formData.city}
+                    onChange={handleChange}
+                />
                 <div className="form__field form__field--options">
                     <span className="form__label">Seleccione el tipo de producto*</span>
                     <div className="form__options">
@@ -87,29 +81,39 @@ export const ContactForm = () => {
                                 className="form__radio"
                                 type="radio"
                                 name="productType"
+                                id='tractores'
                             />
-                            <span>Tractores</span>
+                            <label htmlFor='tractores'>Tractores</label>
                         </div>
                         <div className="form__option">
                             <input
                                 className="form__radio"
                                 type="radio"
                                 name="productType"
+                                id='maquina-vial'
                             />
-                            <span>Máquina vial</span>
+                            <label htmlFor='maquina-vial'>Máquina vial</label>
                         </div>
                         <div className="form__option">
                             <input
                                 className="form__radio"
                                 type="radio"
                                 name="productType"
+                                id='implementos'
                             />
-                            <span>Implementos</span>
+                            <label htmlFor='implementos'>Implementos</label>
                         </div>
                     </div>
                 </div>
             </div>
-            <input onSubmit={handleSubmit} type="submit" value="Enviar" className="form__submit" />
+            <input
+                onSubmit={handleSubmit}
+                type="submit"
+                value="Enviar"
+                className="form__submit"
+            />
         </form>
+
+
     )
 }
