@@ -1,22 +1,31 @@
 'use client'
 
-import { useRef } from 'react';
+import { useRef, useEffect } from "react";
 
-export const FormField = (props) => {
-    const { modifier, inputId, label, inputName, inputType, placeholder, value, onChange, toFocus } = props;
+export const FormField = ({ modifier, inputId, label, inputName, inputType, placeholder, value, handleChange, withError }) => {
+
+    const inputRef = useRef(null);
+
+    useEffect(() => {
+        if (withError) {
+            inputRef.current.focus();
+        }
+    }, [withError]);
 
     return (
         <div className={`form__field form__field--${modifier}`}>
             <label htmlFor={inputId} className="form__label">{label}</label>
             <input
+                ref={inputRef}
                 autoComplete="off"
-                className={`form__input ${toFocus ? 'form__input--focus' : ''}`}
+                className={`form__input ${withError ? 'form__input--focus' : ''}`}
                 id={inputId}
                 name={inputName}
                 type={inputType}
                 placeholder={placeholder}
                 value={value}
-                onChange={onChange}
+                onChange={e => handleChange(e.target.value)}
+                required
             />
         </div>
     )

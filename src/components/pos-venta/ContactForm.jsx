@@ -191,7 +191,6 @@ export const ContactForm = () => {
                     </div>
                 </div>
                 <input
-                    onSubmit={handleSubmit}
                     type="submit"
                     value="Enviar"
                     className="form__submit"

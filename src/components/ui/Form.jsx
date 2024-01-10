@@ -3,10 +3,10 @@ import { useState } from 'react';
 import { FormField, Alert } from '@/components'
 
 
-export const Form = ({ submitForm, fields }) => {
+export const Form = ({ sendData, fields, classNames }) => {
 
-    const [fieldToFocus, setFieldToFocus] = useState(null);
 
+    const [errorField, setErrorField] = useState(null);
 
     const [alert, setAlert] = useState({
         type: '',
@@ -17,7 +17,6 @@ export const Form = ({ submitForm, fields }) => {
 
     const handleAlert = (message, type = 'success', time = 3000) => {
         const id = alert.id + 1;
-        setAlert({ type, message, id });
         clearTimeout(alert.timeoutId);
         const timeoutId = setTimeout(() => {
             setAlert({ type: '', message: '', timeoutId: null, id });
@@ -25,39 +24,88 @@ export const Form = ({ submitForm, fields }) => {
         setAlert({ type, message, timeoutId, id });
     }
 
-    //ejemplo de field
-    /*const field = {
-        modifier: "name",
-        inputId: "name",
-        label: "Nombre y Apellido*",
-        inputName: "name",
-        inputType: "text",
-        placeholder: "Tu nombre y Apellido",
-        validations: {
-            minLength: 3,
-            maxLength: 100,
-            regex: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
-            isNumber: false,
-        },
-        required: true
-    }*/
-
     const middlewareForm = e => {
         e.preventDefault();
+        setErrorField(null);
 
-        //Hacer las validaciones recorriendo el array de fields
-        //Obtener campos vacios
-        
+        try {
+            fields.forEach(field => {
 
+                //Verificar campos obligatorios
+                if (field.required) {
+                    if (field.value === '') {
+                        setErrorField(field.inputId);
+                        throw new Error("Debes completar todos los campos obligatorios.")
+                    }
+                }
 
-        submitForm();
+                //Verificar campos numericos
+                if (field.inputType === 'number' && field.value !== '') {
+                    if (isNaN(field.value)) {
+                        setErrorField(field.inputId);
+                        throw new Error(`El campo ${field.label} debe ser un número.`);
+                    }
+                }
+
+                //Verificar validaciones personalizadas
+                if (field.validations) {
+                    if (field.value !== '') {
+                        if (field.validations.minLength) {
+                            if (field.value.length < field.validations.minLength.value) {
+                                setErrorField(field.inputId);
+                                throw new Error(field.validations.minLength.errorMessage);                                
+                            }
+                        }
+                        if (field.validations.maxLength) {
+                            if (field.value.length > field.validations.maxLength.value) {
+                                setErrorField(field.inputId);
+                                throw new Error(field.validations.maxLength.errorMessage);                                
+                            }
+                        }
+                        if (field.validations.regex) {
+                            if (!field.validations.regex.value.test(field.value)) {
+                                setErrorField(field.inputId);
+                                throw new Error(field.validations.regex.errorMessage);                                
+                            }
+                        }
+                    }
+                }
+
+            });
+
+            //Enviar al servidor
+            sendData();
+        } catch (error) {
+            handleAlert(error.message, 'error');
+        }
+
     }
 
     return (
         <>
             {alert.message && <Alert key={alert.id} type={alert.type} message={alert.message} />}
-            <form onSubmit={middlewareForm}>
-
+            <form className={`form ${classNames}`} onSubmit={middlewareForm}>
+                <div className='form__grid'>
+                    {fields.map(field => (
+                        <FormField
+                            key={field.inputId}
+                            modifier={field.modifier}
+                            inputId={field.inputId}
+                            label={field.label}
+                            inputName={field.inputName}
+                            inputType={field.inputType}
+                            placeholder={field.placeholder}
+                            value={field.value}
+                            handleChange={field.handleChange}
+                            withError={errorField === field.inputId}
+                        />
+                    ))}
+                </div>
+                <input
+                    type="submit"
+                    value="Enviar"
+                    className="form__submit"
+                />
             </form>
         </>
     )
