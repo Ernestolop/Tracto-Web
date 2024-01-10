@@ -98,6 +98,7 @@ export const Form = ({ sendData, fields, classNames }) => {
                             value={field.value}
                             handleChange={field.handleChange}
                             withError={errorField === field.inputId}
+                            accept={field.accept}
                         />
                     ))}
                 </div>

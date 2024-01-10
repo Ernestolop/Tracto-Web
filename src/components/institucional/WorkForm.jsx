@@ -84,7 +84,8 @@ export const WorkForm = () => {
                     value: /\.(pdf|doc|docx)$/i,
                     errorMessage: 'El archivo debe ser pdf, doc o docx'
                 }
-            }
+            },
+            accept: '.pdf,.doc,.docx'
         }
 
     ]
