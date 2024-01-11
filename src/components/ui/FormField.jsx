@@ -2,7 +2,7 @@
 
 import { useRef, useEffect } from "react";
 
-export const FormField = ({ modifier, inputId, label, inputName, inputType, placeholder, value, handleChange, withError, accept }) => {
+export const FormField = ({ modifier, inputId, label, inputName, inputType, placeholder, value, handleChange, withError, accept, required }) => {
 
     const inputRef = useRef(null);
 
@@ -25,7 +25,7 @@ export const FormField = ({ modifier, inputId, label, inputName, inputType, plac
                 placeholder={placeholder}
                 value={value}
                 onChange={e => handleChange(e.target.value)}
-                required
+                required={required}
                 accept={accept}
             />
         </div>

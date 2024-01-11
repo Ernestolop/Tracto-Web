@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react';
-import { FormField, Alert } from '@/components'
+import { FormField, Alert, FormFieldRadio } from '@/components'
 
 
 export const Form = ({ sendData, fields, classNames }) => {
@@ -53,19 +53,27 @@ export const Form = ({ sendData, fields, classNames }) => {
                         if (field.validations.minLength) {
                             if (field.value.length < field.validations.minLength.value) {
                                 setErrorField(field.inputId);
-                                throw new Error(field.validations.minLength.errorMessage);                                
+                                throw new Error(field.validations.minLength.errorMessage);
                             }
                         }
                         if (field.validations.maxLength) {
                             if (field.value.length > field.validations.maxLength.value) {
                                 setErrorField(field.inputId);
-                                throw new Error(field.validations.maxLength.errorMessage);                                
+                                throw new Error(field.validations.maxLength.errorMessage);
                             }
                         }
-                        if (field.validations.regex) {
-                            if (!field.validations.regex.value.test(field.value)) {
+                        if (field.validations.equal) {
+                            const valueToCompare = field.value.replace(/\s/g, '');
+                            if (!field.validations.regex.value.test(valueToCompare.trim())) {
                                 setErrorField(field.inputId);
-                                throw new Error(field.validations.regex.errorMessage);                                
+                                throw new Error(field.validations.equal.errorMessage);
+                            }
+                        }
+                        if (field.validations.equalLength) {
+                            const valueToCompare = field.value.replace(/\s/g, '');
+                            if (valueToCompare.trim().length !== field.validations.equalLength.value) {
+                                setErrorField(field.inputId);
+                                throw new Error(field.validations.equalLength.errorMessage);
                             }
                         }
                     }
@@ -84,23 +92,41 @@ export const Form = ({ sendData, fields, classNames }) => {
     return (
         <>
             {alert.message && <Alert key={alert.id} type={alert.type} message={alert.message} />}
-            <form className={`form ${classNames}`} onSubmit={middlewareForm}>
-                <div className='form__grid'>
-                    {fields.map(field => (
-                        <FormField
-                            key={field.inputId}
-                            modifier={field.modifier}
-                            inputId={field.inputId}
-                            label={field.label}
-                            inputName={field.inputName}
-                            inputType={field.inputType}
-                            placeholder={field.placeholder}
-                            value={field.value}
-                            handleChange={field.handleChange}
-                            withError={errorField === field.inputId}
-                            accept={field.accept}
-                        />
-                    ))}
+            <form className='form' onSubmit={middlewareForm}>
+                <div className={`${classNames}`}>
+                    {fields.map(field =>
+                        field.inputType === 'radio' ?
+                            (
+                                <FormFieldRadio
+                                    key={field.inputId}
+                                    inputId={field.inputId}
+                                    label={field.label}
+                                    inputName={field.inputName}
+                                    inputType={field.inputType}
+                                    value={field.value}
+                                    handleChange={field.handleChange}
+                                    withError={errorField === field.inputId}
+                                    options={field.options}
+                                />
+                            )
+                            :
+                            (
+                                <FormField
+                                    key={field.inputId}
+                                    modifier={field.modifier}
+                                    inputId={field.inputId}
+                                    label={field.label}
+                                    inputName={field.inputName}
+                                    inputType={field.inputType}
+                                    placeholder={field.placeholder}
+                                    value={field.value}
+                                    handleChange={field.handleChange}
+                                    withError={errorField === field.inputId}
+                                    accept={field.accept}
+                                    required={field.required}
+                                />
+                            )
+                    )}
                 </div>
                 <input
                     type="submit"

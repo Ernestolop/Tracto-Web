@@ -13,7 +13,6 @@ export const WorkForm = () => {
 
         {
             inputId: "name",
-            modifier: "name",
             label: "Nombre y Apellido*",
             inputName: "name",
             inputType: "text",
@@ -31,7 +30,6 @@ export const WorkForm = () => {
 
         {
             inputId: "email",
-            modifier: "email",
             label: "Correo electrónico*",
             inputName: "email",
             inputType: "email",
@@ -53,7 +51,6 @@ export const WorkForm = () => {
 
         {
             inputId: "position",
-            modifier: "position",
             label: "Departamento al que se postula",
             inputName: "position",
             inputType: "text",
@@ -71,7 +68,6 @@ export const WorkForm = () => {
 
         {
             inputId: "file",
-            modifier: "file",
             label: "Adjuntar CV*",
             inputName: "file",
             inputType: "file",
@@ -97,7 +93,7 @@ export const WorkForm = () => {
     return (
         <Form
             fields={fields}
-            classNames="form--work"
+            classNames="form__workhere"
             sendData={sendData}
         />
     )
