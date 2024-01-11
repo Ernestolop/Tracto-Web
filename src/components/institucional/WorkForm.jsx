@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react';
 import { Form } from '@/components'
+import { sendWorkHereMail } from '@/helpers';
 
 export const WorkForm = () => {
 
@@ -86,8 +87,24 @@ export const WorkForm = () => {
 
     ]
 
-    const sendData = () => {
-        console.log('submit');
+    const  sendData = async () => {
+        const data = {
+            name,
+            email,
+            position,
+            file
+        }
+
+        const response = await sendWorkHereMail(data);
+
+        if (response.code === 200) {
+            setName('');
+            setEmail('');
+            setPosition('');
+            setFile('');
+        }
+
+        return response;
     }
 
     return (

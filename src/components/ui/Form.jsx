@@ -24,7 +24,7 @@ export const Form = ({ sendData, fields, classNames }) => {
         setAlert({ type, message, timeoutId, id });
     }
 
-    const middlewareForm = e => {
+    const middlewareForm = async e => {
         e.preventDefault();
         setErrorField(null);
 
@@ -82,7 +82,14 @@ export const Form = ({ sendData, fields, classNames }) => {
             });
 
             //Enviar al servidor
-            sendData();
+            const responde = await sendData();
+            console.log(responde);
+            if (responde.code !== 200) {
+                throw new Error(responde.message);
+            }
+
+            handleAlert(responde.message);
+
         } catch (error) {
             handleAlert(error.message, 'error');
         }
