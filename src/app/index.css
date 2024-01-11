@@ -78,7 +78,7 @@
 }
 
 /* Formulario */
-.form--workhere{
+.form__workhere{
     padding: var(--space-md);
     display: flex;
     flex-direction: column;
@@ -86,14 +86,14 @@
 }
 
 @media (min-width: 768px) {
-    .form--workhere{
+    .form__workhere{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 
-.form__grid{
+.form__contact{
     max-width: 450px;
     margin: var(--space-md) auto;
     padding-inline: var(--space-md);
@@ -103,7 +103,7 @@
 }
 
 @media (min-width: 768px) {
-    .form__grid{
+    .form__contact{
         display: grid;
         grid-template-areas: 
             "name company"
@@ -139,6 +139,10 @@
     .form__field--options{
         grid-area: options;
     }
+}
+
+.form__label--error{
+    color: var(--color-alert-error);
 }
 
 .form__input{
