@@ -163,9 +163,10 @@
 
 
 .form__options{
+    margin-block-start: var(--space-md);
     display: flex;
     flex-direction: column;
-    gap: var(--space-xxs);
+    gap: var(--space-sm);
 }
 
 @media (min-width: 768px) {
@@ -182,9 +183,9 @@
 }
 
 .form__radio{
-    margin-inline-end: var(--space-xxs);
-    width: 18px;
-    height: 18px;
+    margin-inline-end: var(--space-md);
+    width: 20px;
+    height: 20px;
 }
 
 .form__submit{
