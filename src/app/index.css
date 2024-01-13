@@ -1,5 +1,5 @@
 /* Header */
-.header{
+.header {
     background-color: var(--color-primary);
     position: relative;
 }
@@ -7,17 +7,17 @@
 /* Navbar */
 .navbar {
     display: flex;
-    justify-content: space-between;    
+    justify-content: space-between;
     align-items: center;
-    color : var(--black);
+    color: var(--black);
     padding: var(--space-md);
 }
 
-.navbar__logo:hover{
+.navbar__logo:hover {
     transform: scale(1.1);
 }
 
-.nav{
+.nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,17 +25,17 @@
 }
 
 @media (min-width: 768px) {
-    .nav__hamburger{
+    .nav__hamburger {
         display: none;
     }
 }
 
-.nav__ul{
+.nav__ul {
     display: flex;
     flex-direction: column;
     position: absolute;
     top: 100%;
-    right:0;
+    right: 0;
     left: 0;
     background-color: var(--color-primary);
     width: 100%;
@@ -47,7 +47,7 @@
 }
 
 @media (min-width: 768px) {
-    .nav__ul{
+    .nav__ul {
         position: relative;
         flex-direction: row;
         padding: 0;
@@ -55,17 +55,17 @@
     }
 }
 
-.nav__ul--mdhide{
+.nav__ul--mdhide {
     display: none;
 }
 
 @media (min-width: 768px) {
-    .nav__ul--mdhide{
+    .nav__ul--mdhide {
         display: flex;
     }
 }
 
-.nav__link{
+.nav__link {
     padding: var(--space-xxs);
     border-radius: var(--space-xxs);
     font-weight: bold;
@@ -76,25 +76,26 @@
 }
 
 
-.nav__link:hover{
+.nav__link:hover {
     background-color: var(--color-secondary);
     color: var(--white);
     fill: var(--white);
 }
 
-.nav__link--home:hover{
+.nav__link--home:hover {
     background-color: unset;
     color: unset;
     transform: scale(1.1);
 }
 
-.nav__home:hover{
+.nav__home:hover {
     fill: var(--color-secondary);
 
 }
+
 /* Carrousel */
 
-.carrousel__content{
+.carrousel__content {
     pointer-events: none;
     position: absolute;
     top: 0;
@@ -110,20 +111,20 @@
 }
 
 @media (min-width: 768px) {
-    .carrousel__content{
+    .carrousel__content {
         grid-template-rows: unset;
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-.carrousel__slogan{
+.carrousel__slogan {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
 }
 
-.carrousel__heading{
+.carrousel__heading {
     display: block;
     color: var(--white);
     font-size: var(--size-xxl);
@@ -131,23 +132,23 @@
 
 }
 
-.carrousel__text{
+.carrousel__text {
     color: var(--white);
     font-size: var(--size-md);
 }
 
-.carrousel__heading--primary{
+.carrousel__heading--primary {
     color: var(--color-primary);
 }
 
-.exchange{
+.exchange {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 @media (min-width: 768px) {
-    .exchange{
+    .exchange {
         padding-block-end: var(--space-xxl);
         justify-content: center;
         align-items: end;
@@ -155,70 +156,70 @@
 }
 
 @media (min-width: 992px) {
-    .exchange{
+    .exchange {
         padding: 0 calc(var(--space-xxxl)) calc(var(--space-xxxl)) 0;
         justify-content: end;
         align-items: end;
     }
 }
 
-.exchange__content{
+.exchange__content {
     background-color: var(--gray);
     border-radius: var(--space-xxs);
-    padding:  var(--space-sm) var(--space-xxl);
+    padding: var(--space-sm) var(--space-xxl);
 }
 
-.exchange__heading{
+.exchange__heading {
     color: var(--color-primary);
     font-size: var(--size-md);
     font-weight: 500;
     text-align: center;
 }
 
-.exchange__table{
+.exchange__table {
     margin-block: var(--space-md);
     width: 100%;
     border-collapse: separate;
     border-spacing: 10px;
 }
 
-.exchange__td{
+.exchange__td {
     text-align: center;
     color: var(--white);
 }
 
-.exchange__td--th{
+.exchange__td--th {
     color: var(--color-primary);
 }
 
-.exchange__tosymbol{
+.exchange__tosymbol {
     color: var(--color-primary);
 }
 
-.exchange__font{
+.exchange__font {
     color: var(--color-primary);
     text-align: center;
 }
 
-.exchange__font--title{
+.exchange__font--title {
     font-weight: bold;
 }
 
-.hero{
+.hero {
     width: 100%;
     object-fit: cover;
-    height: 700px; 
+    height: 700px;
     object-position: 50%;
 }
 
 @media (min-width: 992px) {
-    .hero{
+    .hero {
         height: auto;
     }
 }
 
 /* Formulario */
-.form__workhere{
+.form__workhere {
     padding: var(--space-md);
     display: flex;
     flex-direction: column;
@@ -226,14 +227,14 @@
 }
 
 @media (min-width: 768px) {
-    .form__workhere{
+    .form__workhere {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 
-.form__contact{
+.form__contact {
     max-width: 450px;
     margin: var(--space-md) auto;
     padding-inline: var(--space-md);
@@ -243,9 +244,9 @@
 }
 
 @media (min-width: 768px) {
-    .form__contact{
+    .form__contact {
         display: grid;
-        grid-template-areas: 
+        grid-template-areas:
             "name company"
             "email phone"
             "city city"
@@ -254,55 +255,60 @@
     }
 }
 
-.form__field{
+.form__field {
     display: flex;
     flex-direction: column;
     gap: var(--space-xxs);
 }
 
 @media (min-width: 768px) {
-    .form__field--name{
+    .form__field--name {
         grid-area: name;
     }
-    .form__field--company{
+
+    .form__field--company {
         grid-area: company;
     }
-    .form__field--email{
+
+    .form__field--email {
         grid-area: email;
     }
-    .form__field--phone{
+
+    .form__field--phone {
         grid-area: phone;
     }
-    .form__field--city{
+
+    .form__field--city {
         grid-area: city;
     }
-    .form__field--options{
+
+    .form__field--options {
         grid-area: options;
     }
 }
 
-.form__label--error{
+.form__label--error {
     color: var(--color-alert-error);
 }
 
-.form__input{
+.form__input {
     padding: var(--space-xs);
     border-radius: var(--space-xxs);
     border: 1px solid var(--black);
     width: 100%;
-    outline: none;  
+    outline: none;
 }
 
-.form__input--focus{
+.form__input--focus {
     border: 1px solid var(--color-secondary);
 }
 
-.form__input--focus::placeholder{
+.form__input--focus::placeholder {
     color: var(--color-secondary);
 }
 
 
-.form__options{
+.form__options {
     margin-block-start: var(--space-md);
     display: flex;
     flex-direction: column;
@@ -310,25 +316,25 @@
 }
 
 @media (min-width: 768px) {
-    .form__options{
+    .form__options {
         flex-direction: row;
-        gap: 0 ;
+        gap: 0;
         justify-content: space-between;
     }
 }
 
-.form__option{
+.form__option {
     display: flex;
     align-items: center;
 }
 
-.form__radio{
+.form__radio {
     margin-inline-end: var(--space-md);
     width: 20px;
     height: 20px;
 }
 
-.form__submit{
+.form__submit {
     padding: var(--space-xs);
     border-radius: var(--space-xxs);
     border: none;
@@ -342,42 +348,42 @@
 }
 
 @media (min-width: 576px) {
-    .form__submit{
+    .form__submit {
         width: 50%;
     }
 }
 
 
 /* Tracto Route */
-.year{
+.year {
     text-align: left;
     margin-block: var(--space-md);
     gap: var(--space-md);
 }
 
-.year--last{
+.year--last {
     margin-block-end: 0;
     margin-block-end: var(--space-xxl);
 }
 
 @media (min-width: 768px) {
-    .year{
+    .year {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         position: relative;
         margin: 0;
     }
-    
-    .year--last{
+
+    .year--last {
         margin-block-end: 0;
         margin-block-end: var(--space-xxl);
     }
 
-    .year__card--end{
+    .year__card--end {
         order: 1;
     }
 
-    .year::after{
+    .year::after {
         content: "";
         display: block;
         width: 3px;
@@ -388,7 +394,7 @@
         transform: translate(-50%, 0);
     }
 
-    .year::before{
+    .year::before {
         content: "";
         display: block;
         width: 25px;
@@ -402,11 +408,11 @@
     }
 }
 
-.year__card{
+.year__card {
     padding: var(--space-md);
 }
 
-.year__image{
+.year__image {
     width: 100%;
     height: auto;
     max-width: 600px;
@@ -416,15 +422,15 @@
     object-position: right;
 }
 
-.year__title{
-    display: block; 
+.year__title {
+    display: block;
     text-align: left;
     margin-block-end: var(--space-md);
     font-weight: bold;
     font-size: var(--size-sm);
 }
 
-.year__content{
+.year__content {
     margin-block-start: var(--space-md);
     text-align: center;
     display: flex;
@@ -434,7 +440,7 @@
 
 
 /* Tracto branches */
-.location{
+.location {
     display: flex;
     flex-direction: column;
     gap: var(--space-sm);
@@ -442,14 +448,14 @@
 }
 
 @media (min-width: 768px) {
-    .location{
+    .location {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: var(--space-sm);
     }
 }
 
-.location__map{
+.location__map {
     width: 100%;
     max-width: 450px;
     height: 550px;
@@ -458,36 +464,36 @@
 }
 
 @media (min-width: 768px) {
-    .branches{
+    .branches {
         display: flex;
         flex-direction: column;
         justify-content: end;
         padding-block-end: var(--space-md);
     }
 
-    .branches__container{
+    .branches__container {
         max-height: 450px;
         overflow-y: scroll;
     }
 }
 
-.branches__branch{
+.branches__branch {
     padding: var(--space-md);
     border-inline: .5px solid var(--black);
     border-block-start: .5px solid var(--black);
 }
 
-.branches__branch--last{
+.branches__branch--last {
     border-block-end: .3px solid var(--black);
 }
 
-.branch__city{
+.branch__city {
     font-weight: bold;
     font-size: var(--size-sm);
     color: var(--color-secondary);
 }
 
-.branches__tellabel{
+.branches__tellabel {
     font-weight: bold;
 }
 
@@ -503,7 +509,7 @@
     animation: alert 0.5s ease-in-out;
     z-index: 20;
 }
-  
+
 .alert--error {
     background-color: var(--color-alert-error);
 }
@@ -563,12 +569,35 @@
 
 @keyframes progress {
     0% {
-      width: 100%;
+        width: 100%;
     }
-  
+
     100% {
-      width: 0%;
+        width: 0%;
     }
 }
-  
 
+
+/* Footer */
+.footer{
+    height: 500px;
+    background-image: url(/images/fondo-amarillo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center left;
+    position: relative;
+}
+
+@media (min-width: 992px) {
+    .footer {
+        background-position: bottom center;
+    }
+}
+
+.footer__image {
+    fill: var(--color-secondary);
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+}

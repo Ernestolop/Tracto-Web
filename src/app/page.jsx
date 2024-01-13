@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import { Carrousel } from '@/components';
+import { Carrousel, BlogGrid } from '@/components';
 
 export const metadata = {
   //title y description
@@ -87,6 +86,7 @@ export default function Home() {
       <Carrousel
         images={images}
       />
+      <BlogGrid />
     </main>
   )
 }
