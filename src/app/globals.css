@@ -12,6 +12,7 @@
     --color-primary: #f3c428;
     --color-secondary: #e01717;
     --black: #000000;
+    --gray: #302a2a;
     --white: #ffffff;
     --color-alert-error: #960505;
     --color-alert-error-light: #fa2c2c;
@@ -42,11 +43,11 @@
     --alert-time: 3000ms;
 
     /* swipper */
-    --swiper-pagination-color: var(--white);
-    --swiper-pagination-bullet-inactive-color: var(--white);
+    --swiper-pagination-color: var(--color-primary);
+    --swiper-pagination-bullet-inactive-color: var(--color-primary);
     --swiper-pagination-bullet-inactive-opacity: 0.8;
-    --swiper-pagination-bullet-width: 8px;
-    --swiper-pagination-bullet-height: 8px;
+    --swiper-pagination-bullet-width: 12px;
+    --swiper-pagination-bullet-height: 12px;
     --swiper-pagination-bullet-border-radius: 0;
 }
 
@@ -64,8 +65,20 @@
 
 html {
   /* 1rem */
-  font-size: 16px;
+  font-size: 12px;
 }
+
+@media (min-width: 992px) {
+    html {
+      font-size: 14px;
+    }
+  }
+
+@media (min-width: 1200px) {
+    html {
+      font-size: 16px;
+    }
+  }
 
 p, h1, h2, h3, h4, h5, h6, a, span, input, label{
     font-size: var(--size-xs);
@@ -91,7 +104,7 @@ button{
 
 /* Utility Classes */
 .mw-950{
-    max-width: 1024px;
+    max-width: 1400px;
     margin-inline: auto;
     padding-inline: var(--space-md);
 }

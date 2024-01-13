@@ -16,10 +16,10 @@ export const NavBar = () => {
         <div className='navbar mw-950'>
             <Link onClick={() => setMenuOpen(false)} href="/" className='navbar__logo'>
                 <Image
-                    src="/images/tracto_agro_vial_logo.png"//TODO: utilizar el url absoluto
+                    src="/images/logo.png"//TODO: utilizar el url absoluto
                     alt="Logo de tracto agro vial"
-                    width={200}
-                    height={36}
+                    width={165}
+                    height={29}
                 />
             </Link>
             <nav className='nav'>
