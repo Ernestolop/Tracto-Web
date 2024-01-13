@@ -13,6 +13,10 @@
     padding: var(--space-md);
 }
 
+.navbar__logo:hover{
+    transform: scale(1.1);
+}
+
 .nav{
     display: flex;
     justify-content: space-between;
@@ -65,13 +69,29 @@
     padding: var(--space-xxs);
     border-radius: var(--space-xxs);
     font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 .nav__link:hover{
     background-color: var(--color-secondary);
     color: var(--white);
+    fill: var(--white);
 }
 
+.nav__link--home:hover{
+    background-color: unset;
+    color: unset;
+    transform: scale(1.1);
+}
+
+.nav__home:hover{
+    fill: var(--color-secondary);
+
+}
 /* Carrousel */
 
 .carrousel__content{
