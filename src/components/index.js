@@ -1,4 +1,5 @@
 export * from './ui/NavBar';
+export * from './ui/Carrousel';
 export * from './ui/Form';
 export * from './ui/FormField';
 export * from './ui/FormFieldRadio';

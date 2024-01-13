@@ -1,4 +1,5 @@
-import Image from 'next/image'
+import Image from 'next/image';
+import { Carrousel } from '@/components';
 
 export const metadata = {
   //title y description
@@ -55,15 +56,27 @@ export const metadata = {
 
 }
 
+
+const images = [
+  {
+    url: '/images/hero.png',
+    width: 800,
+    height: 600,
+    alt: 'Tractor',
+  },
+  {
+    url: '/images/hero.png',
+    width: 800,
+    height: 600,
+    alt: 'Tractor',
+  }
+]
+
 export default function Home() {
   return (
     <main>
-      <Image
-        className="hero"
-        src="/images/hero.png"
-        alt="Tracto Agro Vial"
-        width={950}
-        height={400}
+      <Carrousel
+        images={images}
       />
     </main>
   )

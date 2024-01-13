@@ -40,6 +40,14 @@
 
     /* Tiempos */
     --alert-time: 3000ms;
+
+    /* swipper */
+    --swiper-pagination-color: var(--white);
+    --swiper-pagination-bullet-inactive-color: var(--white);
+    --swiper-pagination-bullet-inactive-opacity: 0.8;
+    --swiper-pagination-bullet-width: 8px;
+    --swiper-pagination-bullet-height: 8px;
+    --swiper-pagination-bullet-border-radius: 0;
 }
 
 
