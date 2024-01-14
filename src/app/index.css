@@ -128,6 +128,19 @@
 
 /* Carrousel */
 
+.swiper-pagination {
+    padding-block-end: var(--space-lg);
+}
+
+.swiper-pagination-bullet {
+    background-color: transparent !important;
+    border: 2px solid var(--color-primary) !important;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--color-primary) !important;
+}
+
 .carrousel__content {
     pointer-events: none;
     position: absolute;
@@ -175,21 +188,14 @@
 }
 
 .exchange {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
 
 @media (min-width: 768px) {
     .exchange {
-        padding-block-end: var(--space-xxl);
-        justify-content: center;
-        align-items: end;
-    }
-}
-
-@media (min-width: 992px) {
-    .exchange {
+        display: flex;
         padding: 0 calc(var(--space-xxxl)) calc(var(--space-xxxl)) 0;
         justify-content: end;
         align-items: end;
@@ -197,6 +203,7 @@
 }
 
 .exchange__content {
+    max-width: 350px;
     background-color: var(--gray);
     border-radius: var(--space-xxs);
     padding: var(--space-sm) var(--space-xxl);
