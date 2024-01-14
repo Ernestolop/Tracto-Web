@@ -55,7 +55,7 @@ export const NavBar = () => {
                     </li>
                     <li>
                         <Link onClick={() => setMenuOpen(false)} href="/institucional" className='nav__link'>
-                            <span>Institucional</span>
+                            <span className='nav__linktext'>Institucional</span>
                             <svg className='nav__arrow' width={15} height={15} viewBox="0 0 11 6" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M10.73 0.650002C10.45 0.370002 10 0.370002 9.72001 0.650002L6.45001 3.92C6.17001 4.2 5.72001 4.2 5.44001 3.92L2.17001 0.650002C1.89001 0.370002 1.44001 0.370002 1.16001 0.650002C0.880012 0.930002 0.880012 1.38 1.16001 1.66L4.44001 4.94C5.28001 5.78 6.63001 5.78 7.47001 4.94L10.75 1.66C11.03 1.38 11.03 0.930002 10.75 0.650002H10.73Z" />
                             </svg>
@@ -63,7 +63,7 @@ export const NavBar = () => {
                     </li>
                     <li>
                         <Link onClick={() => setMenuOpen(false)} href="/posventa" className='nav__link'>
-                            <span>PosVenta</span>
+                            <span className='nav__linktext'>PosVenta</span>
                             <svg className='nav__arrow' width={15} height={15} viewBox="0 0 11 6" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M10.73 0.650002C10.45 0.370002 10 0.370002 9.72001 0.650002L6.45001 3.92C6.17001 4.2 5.72001 4.2 5.44001 3.92L2.17001 0.650002C1.89001 0.370002 1.44001 0.370002 1.16001 0.650002C0.880012 0.930002 0.880012 1.38 1.16001 1.66L4.44001 4.94C5.28001 5.78 6.63001 5.78 7.47001 4.94L10.75 1.66C11.03 1.38 11.03 0.930002 10.75 0.650002H10.73Z" />
                             </svg>

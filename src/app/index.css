@@ -66,10 +66,8 @@
 }
 
 .nav__link {
-    padding: var(--space-xxs);
+    padding: var(--space-sm);
     border-radius: var(--space-xxs);
-    font-weight: bold;
-    text-transform: uppercase;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,6 +84,11 @@
     background-color: unset;
     color: unset;
     transform: scale(1.1);
+}
+
+.nav__linktext {
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .nav__home:hover {
@@ -347,6 +350,11 @@
     margin: var(--space-md) auto;
 }
 
+.form__submit:active {
+    transform: scale(0.9);
+    transition: transform 0.3s ease-in-out;
+}
+
 @media (min-width: 576px) {
     .form__submit {
         width: 50%;
@@ -445,34 +453,53 @@
     flex-direction: column;
     gap: var(--space-sm);
     margin-block-end: var(--space-md);
+    padding-inline: var(--space-md);
 }
 
 @media (min-width: 768px) {
     .location {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-sm);
+        gap: var(--space-md);
+    }
+}
+
+@media (min-width: 768px) {
+    .location__mapcontainer {
+        display: flex;
+        justify-content: end;
+        align-items: center;
     }
 }
 
 .location__map {
+    display: block;
     width: 100%;
-    max-width: 450px;
     height: 550px;
-    margin: auto;
     border: none;
+    margin-inline: auto;
+}
+
+.branches {
+    border-block-end: .5px solid var(--black);
 }
 
 @media (min-width: 768px) {
-    .branches {
-        display: flex;
-        flex-direction: column;
-        justify-content: end;
-        padding-block-end: var(--space-md);
+    .location__map {
+        width: 80%;
+        margin: unset;
     }
 
     .branches__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: start;
+    }
+
+    .branches {
         max-height: 450px;
+        width: 80%;
         overflow-y: scroll;
     }
 }
@@ -578,6 +605,10 @@
 }
 
 /* Landing */
+
+.landing__container {
+    margin-block: var(--space-md);
+}
 
 @media (min-width: 768px) {
     .landing__container {
