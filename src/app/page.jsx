@@ -1,4 +1,4 @@
-import { Carrousel, BlogGrid } from '@/components';
+import { Carrousel, BlogPagination, Aside } from '@/components';
 
 export const metadata = {
   //title y description
@@ -86,7 +86,12 @@ export default function Home() {
       <Carrousel
         images={images}
       />
-      <BlogGrid />
+      <div className='landing__container mw-950'>
+        <BlogPagination
+          entrysPerPage={6}
+        />
+        <Aside />
+      </div>
     </main>
   )
 }
