@@ -58,9 +58,9 @@ export const metadata = {
 
 export default function Institucional() {
   return (
-    <div className='article_page'>
+    <div className='article_page mw-950'>
       <main className='article_page__main'>
-        <article className="mw-950 article">
+        <article className="article">
           <header className='article__header'>
             <h1 className='article__heading'>Esta es una novedad</h1>
             <Image
