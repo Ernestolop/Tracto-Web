@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export const BlogGrid = ({entrys}) => {
+export const BlogGrid = ({ entrys }) => {
     return (
         <div className="entrys">
             {entrys.map(entry => (
@@ -17,7 +17,7 @@ export const BlogGrid = ({entrys}) => {
                     </header>
                     <main className="entry__main">
                         <p className="entry__preview">{entry.preview}</p>
-                        <Link className="entry__readmore" href={`/blog/${entry.id}`}>Leer más</Link>
+                        <Link className="entry__readmore" href='/blog'>Leer más</Link>
                     </main>
                 </article>
             ))}
