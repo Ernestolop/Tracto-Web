@@ -46,8 +46,8 @@ export const Carrousel = ({ images }) => {
                                     </thead>
                                     <tbody>
                                         <tr className='exchange__tr'>
-                                            <td className='exchange__td'>Dólar<span className='exchange__tosymbol'> {'>'} </span>Guaraní</td>
-                                            <td className='exchange__td'>1.010</td>
+                                            <td className='exchange__td exchange__td--border'>Dólar<span className='exchange__tosymbol'> {'>'} </span>Guaraní</td>
+                                            <td className='exchange__td exchange__td--border'>1.010</td>
                                             <td className='exchange__td'>1.165</td>
                                         </tr>
                                         <tr className='exchange__tr'>
