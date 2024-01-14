@@ -1,71 +1,117 @@
 'use client'
 import { useState } from 'react';
+import { Form } from '@/components'
+import { sendWorkHereMail } from '@/helpers';
 
 export const WorkForm = () => {
 
     const [name, setName] = useState('');
-    const [position, setPosition] = useState('');
     const [email, setEmail] = useState('');
+    const [position, setPosition] = useState('');
     const [file, setFile] = useState('');
 
-    const handleSubmit = e => { e.preventDefault(); }
+    const fields = [
+
+        {
+            inputId: "name",
+            label: "Nombre y Apellido*",
+            inputName: "name",
+            inputType: "text",
+            placeholder: "Tu nombre y Apellido",
+            value: name,
+            handleChange: setName,
+            required: true,
+            validations: {
+                maxLength: {
+                    value: 255,
+                    errorMessage: 'Su nombre debe tener como máximo 255 caracteres'
+                }
+            }
+        },
+
+        {
+            inputId: "email",
+            label: "Correo electrónico*",
+            inputName: "email",
+            inputType: "email",
+            placeholder: "Tu email",
+            value: email,
+            handleChange: setEmail,
+            required: true,
+            validations: {
+                regex: {
+                    value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+                    errorMessage: 'El correo no es válido'
+                },
+                maxLength: {
+                    value: 255,
+                    errorMessage: 'Su correo debe tener como máximo 255 caracteres'
+                }
+            }
+        },
+
+        {
+            inputId: "position",
+            label: "Departamento al que se postula",
+            inputName: "position",
+            inputType: "text",
+            placeholder: "Nombre de la empresa",
+            value: position,
+            handleChange: setPosition,
+            required: false,
+            validations: {
+                maxLength: {
+                    value: 255,
+                    errorMessage: 'El departamento debe tener como máximo 255 caracteres'
+                }
+            }
+        },
+
+        {
+            inputId: "file",
+            label: "Adjuntar CV*",
+            inputName: "file",
+            inputType: "file",
+            placeholder: "Carga tu CV",
+            value: file,
+            handleChange: setFile,
+            required: true,
+            validations: {
+                regex: {
+                    value: /\.(pdf|doc|docx)$/i,
+                    errorMessage: 'El archivo debe ser pdf, doc o docx'
+                }
+            },
+            accept: '.pdf,.doc,.docx'
+        }
+
+    ]
+
+    const  sendData = async () => {
+        const data = {
+            name,
+            email,
+            position,
+            file
+        }
+
+        const response = await sendWorkHereMail(data);
+
+        if (response.code === 200) {
+            setName('');
+            setEmail('');
+            setPosition('');
+            setFile('');
+        }
+
+        return response;
+    }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div className='form--workhere'>
-                <div className="form__field">
-                    <label htmlFor="name" className="form__label">Nombre y Apellido completo*</label>
-                    <input
-                        autoComplete="off"
-                        className="form__input"
-                        id="name"
-                        name="name"
-                        type="text"
-                        placeholder="Tu nombre y Apellido"
-                        value={name}
-                        onChange={e => setName(e.target.value)}
-                    />
-                </div>
-                <div className="form__field">
-                    <label htmlFor="email" className="form__label">Correo electrónico*</label>
-                    <input
-                        autoComplete="off"
-                        className="form__input"
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="Tu email"
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
-                    />
-                </div>
-                <div className="form__field">
-                    <label htmlFor="position" className="form__label">Departamento al que se postula</label>
-                    <input
-                        autoComplete="off"
-                        className="form__input"
-                        id="position"
-                        name="position"
-                        type="text"
-                        placeholder="Nombre de la empresa"
-                        value={position}
-                        onChange={e => setPosition(e.target.value)}
-                    />
-                </div>
-                <div className="form__field">
-                    <label htmlFor="cv" className="form__label">Adjuntar CV*</label>
-                    <input
-                        className="form__input form__input--file"
-                        id="cv"
-                        name="cv"
-                        type="file"
-                        placeholder="Carga tu CV"
-                        value={file}
-                        onChange={e => setFile(e.target.value)}
-                    />
-                </div>
-            </div>
-            <input type="submit" value="Enviar" className="form__field--submit form__submit" />
-        </form>
+        <Form
+            fields={fields}
+            classNames="form__workhere"
+            sendData={sendData}
+        />
     )
 }
