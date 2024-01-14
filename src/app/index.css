@@ -740,3 +740,43 @@
     position: absolute;
     bottom: 0;
 }
+
+.footer__content {
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+@media (min-width: 576px) {
+    .footer__content {
+        grid-template-rows: unset;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.social_media,
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.contact__heading,
+.social_media__heading {
+    font-weight: bold;
+    font-size: var(--size-sm);
+}
+
+.contact__list,
+.social_media__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.contact__title,
+.social_media__title {
+    font-weight: bold;
+}

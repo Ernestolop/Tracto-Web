@@ -1,9 +1,29 @@
+import Link from 'next/link';
 
 export const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer__content">
-
+                <section className="contact">
+                    <header className="contact__header">
+                        <h3 className="contact__heading">Contáctanos</h3>
+                    </header>
+                    <ul className="contact__list">
+                        <li className="contact_item"><span className="contact__title">Tel: </span><Link href="tel:021111111" prefetch={false} type='' LinkclassName="contact__link"> (021) xxx xxx</Link></li>
+                        <li className="contact_item"><span className="contact__title">Cel: </span><Link href="tel:0971257580" prefetch={false} type='' className="contact__link"> (595) xxx xxx xxx</Link></li>
+                        <li className="contact_item"><span className="contact__title">Email: </span><Link href="mailto:correo@correo.com" prefetch={false} type='' className="contact__link"> correo@correo.com</Link></li>
+                    </ul>
+                </section>
+                <section className="social_media">
+                    <header className="social_media__header">
+                        <h3 className="social_media__heading">Seguínos</h3>
+                    </header>
+                    <ul className="social_media__list">
+                        <li className="social_media_item"><span className="social_media__title">Instagram: </span><Link href="#" prefetch={false} type='' className="social_media__link"> @instagram_user</Link></li>
+                        <li className="social_media_item"><span className="social_media__title">Facebook: </span><Link href="#" prefetch={false} type='' className="social_media__link"> facebook_user</Link></li>
+                        <li className="social_media_item"><span className="social_media__title">Twitter: </span><Link href="#" prefetch={false} type='' className="social_media__link"> @x_user</Link></li>
+                    </ul>
+                </section>
             </div>
             <svg className="footer__image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 102.45">
                 <g>
