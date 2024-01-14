@@ -44,7 +44,7 @@ export const NavBar = () => {
                 </button>
                 <ul className={`nav__ul ${menuOpen ? '' : 'nav__ul--mdhide'}`}>
                     <li>
-                        <Link onClick={() => setMenuOpen(false)} href="/" className='nav__link nav__link--home'>
+                        <Link onClick={() => setMenuOpen(false)} href="/" className='nav__link nav__link--home' aria-label='Inicio'>
                             <svg width={30} height={30} className='nav__home' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.37 30">
                                 <g>
                                     <g>

@@ -884,19 +884,25 @@
 .contact__heading,
 .social_media__heading {
     font-weight: bold;
-    font-size: var(--size-sm);
+    font-size: var(--size-md);
 }
 
 .contact__list,
 .social_media__list {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xs);
+    gap: var(--space-md);
 }
 
 .contact__title,
 .social_media__title {
+    font-size: var(--size-sm);
     font-weight: bold;
+}
+
+.social_media__link,
+.contact__link {
+    font-size: var(--size-sm);
 }
 
 /* Article Page */

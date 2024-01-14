@@ -6,17 +6,17 @@ export const Footer = () => {
             <div className="footer__content">
                 <section className="contact">
                     <header className="contact__header">
-                        <h3 className="contact__heading">Contáctanos</h3>
+                        <span className="contact__heading">Contáctanos</span>
                     </header>
                     <ul className="contact__list">
-                        <li className="contact_item"><span className="contact__title">Tel: </span><Link href="tel:021111111" prefetch={false} type='' className="contact__link"> (021) xxx xxx</Link></li>
-                        <li className="contact_item"><span className="contact__title">Cel: </span><Link href="tel:0971257580" prefetch={false} type='' className="contact__link"> (595) xxx xxx xxx</Link></li>
-                        <li className="contact_item"><span className="contact__title">Email: </span><Link href="mailto:correo@correo.com" prefetch={false} type='' className="contact__link"> correo@correo.com</Link></li>
+                        <li className="contact__item"><span className="contact__title">Tel: </span><Link href="tel:021111111" prefetch={false} type='' className="contact__link"> (021) xxx xxx</Link></li>
+                        <li className="contact__item"><span className="contact__title">Cel: </span><Link href="tel:0971257580" prefetch={false} type='' className="contact__link"> (595) xxx xxx xxx</Link></li>
+                        <li className="contact__item"><span className="contact__title">Email: </span><Link href="mailto:correo@correo.com" prefetch={false} type='' className="contact__link"> correo@correo.com</Link></li>
                     </ul>
                 </section>
                 <section className="social_media">
                     <header className="social_media__header">
-                        <h3 className="social_media__heading">Seguínos</h3>
+                        <span className="social_media__heading">Seguínos</span>
                     </header>
                     <ul className="social_media__list">
                         <li className="social_media_item"><span className="social_media__title">Instagram: </span><Link href="#" prefetch={false} type='' className="social_media__link"> @instagram_user</Link></li>

@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { BlogGrid } from '@/components';
 
@@ -77,11 +77,11 @@ export const BlogPagination = ({ entrysPerPage }) => {
             <footer>
                 <ReactPaginate
                     breakLabel="..."
-                    nextLabel="Siguiente >"
+                    nextLabel="Next Page >"
                     onPageChange={handlePageClick}
                     pageRangeDisplayed={5}
                     pageCount={pageCount}
-                    previousLabel="< Anterior"
+                    previousLabel="< Previous page"
                     renderOnZeroPageCount={null}
                     className='pagination'
                     pageLinkClassName='pagination__item'
