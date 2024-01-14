@@ -58,15 +58,15 @@ export const metadata = {
 export default function Institucional() {
   return (
     <div className="mw-950">
-      <main>
+      <main id='route'>
         <h1 className="h1">Orgullosos de nuestro crecimiento, compartimos contigo nuestro recorrido.</h1>
         <TractoRoute />
       </main>
-      <section>
+      <section id='workHere'>
         <h2 className="h1">Se parte de este gran equipo humano.</h2>
         <WorkForm />
       </section>
-      <section>
+      <section id='branches'>
         <h2 className="h1">Elegí la que esté más cerca y visítanos, contamos con cobertura total.</h2>
         <TractoBranches />
       </section>

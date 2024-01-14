@@ -9,7 +9,7 @@ export const Footer = () => {
                         <h3 className="contact__heading">Contáctanos</h3>
                     </header>
                     <ul className="contact__list">
-                        <li className="contact_item"><span className="contact__title">Tel: </span><Link href="tel:021111111" prefetch={false} type='' LinkclassName="contact__link"> (021) xxx xxx</Link></li>
+                        <li className="contact_item"><span className="contact__title">Tel: </span><Link href="tel:021111111" prefetch={false} type='' className="contact__link"> (021) xxx xxx</Link></li>
                         <li className="contact_item"><span className="contact__title">Cel: </span><Link href="tel:0971257580" prefetch={false} type='' className="contact__link"> (595) xxx xxx xxx</Link></li>
                         <li className="contact_item"><span className="contact__title">Email: </span><Link href="mailto:correo@correo.com" prefetch={false} type='' className="contact__link"> correo@correo.com</Link></li>
                     </ul>

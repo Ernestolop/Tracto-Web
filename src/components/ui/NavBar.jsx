@@ -7,6 +7,7 @@ import { useState } from 'react';
 export const NavBar = () => {
 
     const [menuOpen, setMenuOpen] = useState(false);
+    const [sectionMouseOver, setSectionMouseOver] = useState('');
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
@@ -53,20 +54,26 @@ export const NavBar = () => {
                             </svg>
                         </Link>
                     </li>
-                    <li>
-                        <Link onClick={() => setMenuOpen(false)} href="/institucional" className='nav__link'>
-                            <span className='nav__linktext'>Institucional</span>
-                            <svg className='nav__arrow' width={15} height={15} viewBox="0 0 11 6" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.73 0.650002C10.45 0.370002 10 0.370002 9.72001 0.650002L6.45001 3.92C6.17001 4.2 5.72001 4.2 5.44001 3.92L2.17001 0.650002C1.89001 0.370002 1.44001 0.370002 1.16001 0.650002C0.880012 0.930002 0.880012 1.38 1.16001 1.66L4.44001 4.94C5.28001 5.78 6.63001 5.78 7.47001 4.94L10.75 1.66C11.03 1.38 11.03 0.930002 10.75 0.650002H10.73Z" />
-                            </svg>
+                    <li onMouseOver={() => setSectionMouseOver('institucional')} onMouseLeave={() => setSectionMouseOver('')} className='nav__item--translate'>
+                        <Link onClick={() => setMenuOpen(false)} href="/institucional/" className='nav__link'>
+                            <div className='nav__section'>
+                                <span className='nav__linktext'>Institucional</span>
+                                <svg className='nav__arrow' width={15} height={15} viewBox="0 0 11 6" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.73 0.650002C10.45 0.370002 10 0.370002 9.72001 0.650002L6.45001 3.92C6.17001 4.2 5.72001 4.2 5.44001 3.92L2.17001 0.650002C1.89001 0.370002 1.44001 0.370002 1.16001 0.650002C0.880012 0.930002 0.880012 1.38 1.16001 1.66L4.44001 4.94C5.28001 5.78 6.63001 5.78 7.47001 4.94L10.75 1.66C11.03 1.38 11.03 0.930002 10.75 0.650002H10.73Z" />
+                                </svg>
+                            </div>
                         </Link>
+                        <div className={`nav__subsection ${sectionMouseOver === 'institucional' ? 'nav__subsection--show' : ''}`}>
+                            <ul className="sub_nav">
+                                <li className="sub_nav__item"><Link onClick={() => setMenuOpen(false)} href="/institucional#route" className='nav__link'>Recorrido</Link></li>
+                                <li className="sub_nav__item"><Link onClick={() => setMenuOpen(false)} href="/institucional#workHere" className='nav__link'>Trabaja Con Nosotros</Link></li>
+                                <li className="sub_nav__item"><Link onClick={() => setMenuOpen(false)} href="/institucional#branches" className='nav__link'>Sucursales</Link></li>
+                            </ul>
+                        </div>
                     </li>
                     <li>
                         <Link onClick={() => setMenuOpen(false)} href="/posventa" className='nav__link'>
                             <span className='nav__linktext'>PosVenta</span>
-                            <svg className='nav__arrow' width={15} height={15} viewBox="0 0 11 6" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.73 0.650002C10.45 0.370002 10 0.370002 9.72001 0.650002L6.45001 3.92C6.17001 4.2 5.72001 4.2 5.44001 3.92L2.17001 0.650002C1.89001 0.370002 1.44001 0.370002 1.16001 0.650002C0.880012 0.930002 0.880012 1.38 1.16001 1.66L4.44001 4.94C5.28001 5.78 6.63001 5.78 7.47001 4.94L10.75 1.66C11.03 1.38 11.03 0.930002 10.75 0.650002H10.73Z" />
-                            </svg>
                         </Link>
                     </li>
                 </ul>

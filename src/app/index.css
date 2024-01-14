@@ -96,6 +96,36 @@
 
 }
 
+.nav__subsection {
+    display: none;
+}
+
+.nav__subsection--show {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .nav__subsection {
+        position: absolute;
+    }
+
+    .nav__subsection--show {
+        display: block;
+        left: 0;
+        right: 0;
+        background-color: var(--color-primary);
+        padding: var(--space-md) 0;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
+        z-index: 10;
+    }
+}
+
+.sub_nav__item {
+    margin-block-end: var(--space-sm);
+}
+
 /* Carrousel */
 
 .carrousel__content {
