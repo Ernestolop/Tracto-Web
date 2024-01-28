@@ -67,7 +67,7 @@ export const NavBar = () => {
                             <ul className="sub_nav">
                                 <li className="sub_nav__item"><Link onClick={() => setMenuOpen(false)} href="/institucional#route" className='nav__link'>Recorrido</Link></li>
                                 <li className="sub_nav__item"><Link onClick={() => setMenuOpen(false)} href="/institucional#workHere" className='nav__link'>Trabaja Con Nosotros</Link></li>
-                                <li className="sub_nav__item"><Link onClick={() => setMenuOpen(false)} href="/institucional#branches" className='nav__link'>Sucursales</Link></li>
+                                <li className="sub_nav__item sub_nav__item--last"><Link onClick={() => setMenuOpen(false)} href="/institucional#branches" className='nav__link'>Sucursales</Link></li>
                             </ul>
                         </div>
                     </li>

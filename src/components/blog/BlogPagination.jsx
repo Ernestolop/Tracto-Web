@@ -77,11 +77,11 @@ export const BlogPagination = ({ entrysPerPage }) => {
             <footer>
                 <ReactPaginate
                     breakLabel="..."
-                    nextLabel="Next Page >"
+                    nextLabel="Siguiente >"
                     onPageChange={handlePageClick}
                     pageRangeDisplayed={5}
                     pageCount={pageCount}
-                    previousLabel="< Previous page"
+                    previousLabel="< Anterior"
                     renderOnZeroPageCount={null}
                     className='pagination'
                     pageLinkClassName='pagination__item'
