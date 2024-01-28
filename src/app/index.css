@@ -77,7 +77,7 @@
 .nav__link:hover {
     background-color: var(--color-secondary);
     color: var(--white);
-    fill: var(--white);
+    fill: var(--color-secondary);
 }
 
 .nav__link--home:hover {
@@ -89,11 +89,6 @@
 .nav__linktext {
     font-weight: bold;
     text-transform: uppercase;
-}
-
-.nav__home:hover {
-    fill: var(--color-secondary);
-
 }
 
 .nav__subsection {
@@ -114,7 +109,7 @@
         left: 0;
         right: 0;
         background-color: var(--color-primary);
-        padding: var(--space-md) 0;
+        padding: 0;
         display: flex;
         flex-direction: column;
         gap: var(--space-md);
@@ -126,7 +121,14 @@
     margin-block-end: var(--space-sm);
 }
 
+.sub_nav__item--last {
+    margin-block-end: 0;
+}
+
 /* Carrousel */
+.mySwiper {
+    background-color: var(--color-secondary);
+}
 
 .swiper-pagination {
     padding-block-end: var(--space-lg);
@@ -415,6 +417,31 @@
 
 
 /* Tracto Route */
+.institutional {
+    background-image: url(/images/ornamento-rojo-transparente.svg),
+        url(/images/ornamento-amarillo-transparente.svg),
+        url(/images/fondo-historia.png);
+    background-repeat: no-repeat, no-repeat, repeat-y;
+    background-position: left, right bottom, center top;
+    background-size: auto 100%, auto 30%, 100% auto;
+}
+
+.route__heading {
+    color: var(--color-secondary);
+    text-align: center;
+    font-weight: bold;
+    font-size: var(--size-lg);
+    margin-block-start: 0;
+    padding-block-start: var(--space-xxxl);
+}
+
+.workHere__heading,
+.branches__heading {
+    text-align: center;
+    font-weight: bold;
+    font-size: var(--size-lg);
+}
+
 .year {
     text-align: left;
     margin-block: var(--space-md);
@@ -423,7 +450,6 @@
 
 .year--last {
     margin-block-end: 0;
-    margin-block-end: var(--space-xxl);
 }
 
 @media (min-width: 576px) {
@@ -436,7 +462,6 @@
 
     .year--last {
         margin-block-end: 0;
-        margin-block-end: var(--space-xxl);
     }
 
     .year__card--end {
@@ -504,7 +529,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-sm);
-    margin-block-end: var(--space-md);
+    padding-block-end: var(--space-md);
     padding-inline: var(--space-md);
 }
 
@@ -658,8 +683,20 @@
 
 /* Landing */
 
+.landing__background {
+    background-image: url(/images/ornamento-blanco-transparente-right.svg),
+        url(/images/ornamento-blanco-transparente-left.svg),
+        url(/images/fondo-rojo.png);
+    /*background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;*/
+    background-repeat: no-repeat;
+    background-size: auto 100%, auto 100%, cover;
+    background-position: left, right, center;
+}
+
 .landing__container {
-    margin-block: var(--space-md);
+    padding-block: var(--space-md);
 }
 
 @media (min-width: 768px) {
@@ -700,6 +737,11 @@
     transition: transform 0.3s ease-in-out;
 }
 
+.pagination__link {
+    color: var(--white);
+    font-weight: bold;
+}
+
 .pagination__link:hover {
     cursor: pointer;
 }
@@ -722,7 +764,8 @@
     text-align: center;
     margin-block: var(--space-md);
     font-weight: bold;
-    font-size: var(--size-sm);
+    font-size: var(--size-lg);
+    color: var(--color-primary);
 }
 
 @media (min-width: 768px) {
@@ -734,6 +777,7 @@
 .entry {
     text-align: start;
     padding: var(--space-md);
+    color: var(--white);
 }
 
 .entry__head {
@@ -753,7 +797,7 @@
 }
 
 .entry__readmore {
-    color: var(--color-secondary);
+    color: var(--color-primary);
     font-weight: bold;
 }
 
@@ -766,7 +810,7 @@
 @media (min-width: 768px) {
     .aside {
         display: flex;
-        gap: var(--space-xxxl);
+        gap: 0;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -774,40 +818,45 @@
     }
 }
 
-.aside_temperature {
-    width: 80%;
-    border-block-end: 1px solid var(--color-primary);
+.aside_temperature,
+.aside_prices {
+    width: 60%;
+    background-color: var(--color-primary);
+    text-align: center;
+    position: relative;
+    padding-block: var(--space-md);
+}
+
+.aside_prices::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, var(--white) 50%, var(--white) 50%, rgba(0, 0, 0, 0) 100%);
+    position: absolute;
+    left: 0;
+    top: 0%;
+    transform: translate(0, -50%);
 }
 
 .temperature__heading,
 .prices_heading {
     font-weight: bold;
-    font-size: var(--size-sm);
-    text-align: start;
+    font-size: var(--size-md);
     margin-block-end: var(--space-md);
+    color: var(--color-secondary);
 }
 
 .temperature__value {
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.temperature__cloud {
-    width: 100px;
-    height: 100px;
-    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .temperature__degrees {
-    font-size: var(--size-md);
-}
-
-.aside_prices {
-    width: 80%;
-    display: block;
+    font-size: var(--size-xxl);
+    font-weight: bold;
 }
 
 .prices__list {
@@ -815,24 +864,44 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: var(--space-sm);
-
 }
 
 .prices__item {
     width: 100%;
-    padding-block: var(--space-sm);
-    border-block-end: .5px solid var(--color-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: var(--space-xxs);
+    gap: var(--space-lg);
+    text-align: center;
 }
 
 .prices_title {
     font-size: var(--size-sm);
     font-weight: bold;
-    text-align: start;
+    width: 100%;
+    text-align: end;
+}
+
+.prices_title--border {
+    position: relative;
+}
+
+.prices_title--border::before {
+    content: "";
+    display: block;
+    width: 3px;
+    height: 510%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, var(--white) 50%, var(--white) 50%, rgba(0, 0, 0, 0) 100%);
+    position: absolute;
+    left: 105%;
+    top: 0;
 }
 
 .prices_price {
     font-size: var(--size-sm);
+    text-align: start;
+    width: 100%;
 }
 
 /* Footer */
@@ -894,10 +963,17 @@
     gap: var(--space-md);
 }
 
-.contact__title,
-.social_media__title {
-    font-size: var(--size-sm);
-    font-weight: bold;
+.contac__icon {
+    width: 25px;
+    height: 25px;
+}
+
+.contact__item,
+.social_media_item {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: var(--space-xs);
 }
 
 .social_media__link,

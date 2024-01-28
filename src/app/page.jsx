@@ -86,11 +86,13 @@ export default function Home() {
       <Carrousel
         images={images}
       />
-      <div className='landing__container mw-950'>
-        <BlogPagination
-          entrysPerPage={6}
-        />
-        <Aside />
+      <div className='landing__background'>
+        <div className='landing__container mw-950'>
+          <BlogPagination
+            entrysPerPage={6}
+          />
+          <Aside />
+        </div>
       </div>
     </main>
   )

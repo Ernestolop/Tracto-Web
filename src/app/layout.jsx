@@ -1,14 +1,14 @@
-import { Dosis } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import './globals.css'
 import './index.css'
 import { NavBar, Footer } from '@/components'
 
-const dosis = Dosis({ subsets: ['latin'] })
+const montserrat = Montserrat({ subsets: ['latin'] })
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${dosis.className} body`}>
+      <body className={`${montserrat.className} body`}>
         <header className='header'>
           <NavBar />
         </header>
