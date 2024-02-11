@@ -1,3 +1,4 @@
+import { branches } from "@/seed"
 
 export const TractoBranches = () => {
     return (
@@ -15,46 +16,21 @@ export const TractoBranches = () => {
             </div>
             <div className="branches__container">
                 <ul className="branches">
-                    <li>
-                        <section className="branches__branch">
-                            <h3 className="branch__city">Asunción</h3>
-                            <p className="branches__address">Avda. Eusebio Ayala 1947.</p>
-                            <p className="branches__departament">Central.</p>
-                            <p className="branches__tel"><span className="branches__tellabel">Tel:</span>(021) 202 913 / 15</p>
-                        </section>
-                    </li>
-                    <li>
-                        <section className="branches__branch">
-                            <h3 className="branch__city">Asunción</h3>
-                            <p className="branches__address">Avda. Eusebio Ayala 1947.</p>
-                            <p className="branches__departament">Central.</p>
-                            <p className="branches__tel"><span className="branches__tellabel">Tel:</span>(021) 202 913 / 15</p>
-                        </section>
-                    </li>
-                    <li>
-                        <section className="branches__branch">
-                            <h3 className="branch__city">Asunción</h3>
-                            <p className="branches__address">Avda. Eusebio Ayala 1947.</p>
-                            <p className="branches__departament">Central.</p>
-                            <p className="branches__tel"><span className="branches__tellabel">Tel:</span>(021) 202 913 / 15</p>
-                        </section>
-                    </li>
-                    <li>
-                        <section className="branches__branch">
-                            <h3 className="branch__city">Asunción</h3>
-                            <p className="branches__address">Avda. Eusebio Ayala 1947.</p>
-                            <p className="branches__departament">Central.</p>
-                            <p className="branches__tel"><span className="branches__tellabel">Tel:</span>(021) 202 913 / 15</p>
-                        </section>
-                    </li>
-                    <li>
-                        <section className="branches__branch">
-                            <h3 className="branch__city">Asunción</h3>
-                            <p className="branches__address">Avda. Eusebio Ayala 1947.</p>
-                            <p className="branches__departament">Central.</p>
-                            <p className="branches__tel"><span className="branches__tellabel">Tel:</span>(021) 202 913 / 15</p>
-                        </section>
-                    </li>
+
+                    {
+                        branches.map(branch => {
+                            return (
+                                <li key={branch.city}>
+                                    <section className="branches__branch">
+                                        <h3 className="branch__city">{branch.city}</h3>
+                                        <p className="branches__address">{branch.address}</p>
+                                        <p className="branches__departament">{branch.departament}</p>
+                                        <p className="branches__tel"><span className="branches__tellabel">Tel:</span>{branch.tel}</p>
+                                    </section>
+                                </li>
+                            )
+                        })
+                    }
 
                 </ul>
             </div>
