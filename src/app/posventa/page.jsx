@@ -22,7 +22,7 @@ export const metadata = {
 export default function PosVenta() {
   return (
     <main className="mw-950">
-      <h1 className="h1">Extiende la vida de tus máquinas, agenda un servicio.</h1>
+      <h1 className="h1 pv__heading">Extiende la vida de tus máquinas, agenda un servicio.</h1>
       <ContactForm />
     </main>
   )

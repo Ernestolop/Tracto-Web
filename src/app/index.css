@@ -344,6 +344,10 @@
     }
 }
 
+.form__label {
+    font-size: var(--size-sm);
+}
+
 .form__label--error {
     color: var(--color-alert-error);
 }
@@ -354,6 +358,7 @@
     border: 1px solid var(--black);
     width: 100%;
     outline: none;
+    font-size: var(--size-sm);
 }
 
 .form__input--focus {
@@ -383,6 +388,7 @@
 .form__option {
     display: flex;
     align-items: center;
+    font-size: var(--size-sm);
 }
 
 .form__radio {
@@ -402,6 +408,7 @@
     display: block;
     width: 80%;
     margin: var(--space-md) auto;
+    font-size: var(--size-sm);
 }
 
 .form__submit:active {
@@ -436,7 +443,8 @@
 }
 
 .workHere__heading,
-.branches__heading {
+.branches__heading,
+.pv__heading {
     text-align: center;
     font-weight: bold;
     font-size: var(--size-lg);
@@ -507,11 +515,17 @@
 }
 
 .year__title {
+    color: var(--color-secondary);
     display: block;
     text-align: left;
     margin-block-end: var(--space-md);
     font-weight: bold;
     font-size: var(--size-sm);
+    text-align: end;
+}
+
+.year__title--last {
+    text-align: start;
 }
 
 .year__content {
@@ -523,6 +537,9 @@
     padding: var(--space-md);
 }
 
+.year_text {
+    font-size: var(--size-sm);
+}
 
 /* Tracto branches */
 .location {

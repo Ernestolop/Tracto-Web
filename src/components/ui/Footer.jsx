@@ -6,33 +6,33 @@ export const Footer = () => {
             <div className="footer__content">
                 <section className="contact">
                     <header className="contact__header">
-                        <span className="contact__heading">Contáctanos</span>
+                        <span className="contact__heading">Contacto</span>
                     </header>
                     <ul className="contact__list">
                         <li className="contact__item">
                             <svg className='contac__icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.98 32.03">
                                 <path fill="#323232;" d="m30.64,14.68c-.74,0-1.33-.6-1.33-1.33,0-5.89-4.78-10.67-10.67-10.67-.74,0-1.33-.6-1.33-1.33S17.9,0,18.63,0c7.37,0,13.33,5.98,13.34,13.34,0,.74-.6,1.33-1.33,1.33Zm-4-1.33c0-4.42-3.58-8.01-8.01-8.01-.74,0-1.33.6-1.33,1.33s.6,1.33,1.33,1.33c2.95,0,5.34,2.39,5.34,5.34,0,.74.6,1.33,1.33,1.33s1.33-.6,1.33-1.33Zm2.91,16.23l1.21-1.4c1.61-1.61,1.61-4.23,0-5.84-.04-.04-3.25-2.51-3.25-2.51-1.6-1.52-4.12-1.52-5.71,0l-2.54,2.14c-4.19-1.74-7.52-5.07-9.25-9.27l2.13-2.54c1.53-1.6,1.53-4.11,0-5.71,0,0-2.47-3.21-2.51-3.25-1.58-1.59-4.15-1.62-5.77-.06l-1.53,1.33c-9.07,10.52,10.46,29.89,21.32,29.54,2.22.01,4.34-.87,5.9-2.45Z" />
                             </svg>
-                            <Link href="tel:021111111" prefetch={false} type='' className="contact__link"> (021) xxx xxx</Link>
+                            <Link href="tel:021111111" prefetch={false} className="contact__link">(021) 555 613</Link>
                         </li>
                         <li className="contact__item">
                             <svg className='contac__icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.98 47.89">
                                 <path fill="#323232;" d="m23.18,0l-1.41,2.82c-.34.68-1.03,1.11-1.79,1.11h-7.99c-.76,0-1.45-.43-1.79-1.11l-1.41-2.82C3.85.59,0,4.82,0,9.92v27.98c0,5.51,4.48,9.99,9.99,9.99h11.99c5.51,0,9.99-4.48,9.99-9.99V9.92c0-5.1-3.85-9.33-8.79-9.92Zm-5.2,41.9h-4c-1.1,0-2-.9-2-2s.9-2,2-2h4c1.1,0,2,.9,2,2s-.9,2-2,2Z" />
                             </svg>
-                            <Link href="tel:0971257580" prefetch={false} type='' className="contact__link"> (595) xxx xxx xxx</Link>
+                            <Link href="tel:0971257580" prefetch={false} className="contact__link">(595) xxx xxx xxx</Link>
                         </li>
                         <li className="contact__item">
                             <svg className='contac__icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.98 29.31">
                                 <path fill="#323232;" d="m31.91,6.05l-11.22,11.22c-2.6,2.6-6.82,2.6-9.42,0L.06,6.05c-.02.21-.06.4-.06.61v15.99c0,3.68,2.98,6.66,6.66,6.66h18.65c3.68,0,6.66-2.98,6.66-6.66V6.66c0-.21-.04-.4-.06-.61Z" />
                                 <path fill="#323232;" d="m18.82,15.38L30.98,3.21C29.79,1.22,27.64,0,25.31,0H6.66C4.34,0,2.19,1.22.99,3.21l12.17,12.17c1.56,1.56,4.09,1.56,5.65,0Z" />
                             </svg>
-                            <Link href="mailto:correo@correo.com" prefetch={false} type='' className="contact__link"> correo@correo.com</Link>
+                            <Link href="mailto:info@tracto.com.py" prefetch={false} className="contact__link">info@tracto.com.py</Link>
                         </li>
                     </ul>
                 </section>
                 <section className="social_media">
                     <header className="social_media__header">
-                        <span className="social_media__heading">Seguínos</span>
+                        <span className="social_media__heading">Redes Sociales</span>
                     </header>
                     <ul className="social_media__list">
                         <li className="social_media_item">
@@ -41,13 +41,13 @@ export const Footer = () => {
                                 <path fill="#323232;" d="m15.99,13.05c-1.62,0-2.94,1.32-2.94,2.94s1.32,2.94,2.94,2.94,2.94-1.32,2.94-2.94-1.32-2.94-2.94-2.94Z" />
                                 <path fill="#323232;" d="m26.55,0H5.43C2.43,0,0,2.43,0,5.43v21.12c0,3,2.43,5.43,5.43,5.43h21.12c3,0,5.43-2.43,5.43-5.43V5.43c0-3-2.43-5.43-5.43-5.43Zm-.51,20.82c0,2.59-2.1,4.69-4.69,4.69h-10.73c-2.59,0-4.69-2.1-4.69-4.69v-9.67c0-2.59,2.1-4.69,4.69-4.69h10.73c2.59,0,4.69,2.1,4.69,4.69v9.67Z" />
                             </svg>
-                            <Link href="#" prefetch={false} type='' className="social_media__link"> @instagram_user</Link>
+                            <Link href="https://www.instagram.com/tractopyoficial/" prefetch={false} className="social_media__link" target="_blank" rel="noopener noreferrer">@tractopyoficial</Link>
                         </li>
                         <li className="social_media_item">
                             <svg className='contac__icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.98 31.98">
                                 <path fill="#323232;" d="m26.55,0H5.43C2.43,0,0,2.43,0,5.43v21.12c0,3,2.43,5.43,5.43,5.43h7.66v-12.6h-3.09v-3.5h2.94c0-7.29,4.88-9.24,10.77-7.23l-1.12,3.32c-2.93-1.51-5.14-.72-5.14,3.91h4.99l-1.53,3.43h-3.47v12.67h9.11c3,0,5.43-2.43,5.43-5.43V5.43c0-3-2.43-5.43-5.43-5.43Z" />
                             </svg>
-                            <Link href="#" prefetch={false} type='' className="social_media__link"> facebook_user</Link>
+                            <Link href="https://www.facebook.com/Tractosae" prefetch={false} className="social_media__link" target="_blank" rel="noopener noreferrer">/tractosae</Link>
                         </li>
                     </ul>
                 </section>

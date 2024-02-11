@@ -16,7 +16,7 @@ export const FormFieldRadio = ({ options, label, inputName, inputType, value, ha
                             checked={value === option.value}
                             id={option.value}
                         />
-                        <label htmlFor={option.value}>{option.label}</label>
+                        <label className='form__label' htmlFor={option.value}>{option.label}</label>
                     </div>
                 )}
             </div>
