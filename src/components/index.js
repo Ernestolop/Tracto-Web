@@ -12,3 +12,4 @@ export * from './institucional/TractoBranches';
 export * from './blog/BlogGrid';
 export * from './blog/BlogPagination';
 export * from './ui/Aside';
+export * from './institucional/BranchesMap';

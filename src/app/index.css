@@ -604,6 +604,10 @@
     border-block-start: .5px solid var(--black);
 }
 
+.branches__branch:hover {
+    cursor: pointer;
+}
+
 .branches__branch--last {
     border-block-end: .3px solid var(--black);
 }
