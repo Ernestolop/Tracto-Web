@@ -13,6 +13,7 @@ export const TractoBranches = () => {
                 <BranchesMap
                     branches={branches}
                     branchSelected={brancheSelected}
+                    key={brancheSelected.city}
                 />
             </div>
             <div className="branches__container">
