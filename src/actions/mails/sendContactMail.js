@@ -1,19 +1,23 @@
+'use server';
+import getMailConfig from './config';
+
 class CustomError extends Error {
     constructor(message, code) {
-        super(message);
+        super(message)
         this.code = code;
     }
 }
 
 export const sendContactMail = async (data) => {
     try {
-
+        //Datos recibidos del cliente
         const { name, company, email, phone, city, productType } = data;
+
+        //Validaciones de los datos
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const phoneRegex = /^[0-9]*$/;
         const phoneNumber = phone.replace(/\s/g, '');
 
-        //validar los datos
         if (!name) {
             throw new CustomError('El nombre es requerido', 400);
         } else if (!email) {
@@ -41,17 +45,26 @@ export const sendContactMail = async (data) => {
         } else if (!phoneRegex.test(phone)) {
             throw new CustomError('El  número de celular no es valido', 400);
         }
-        
-        //enviar el correo
-        return { message: 'Correo enviado correctamente', code: 200 };
 
-    } catch (error) {
-        console.log(error);
-        if (error.code) {
-            return error;
+        //Datos para el envío
+        const { transporter, getContactMailTemplate, getMailOptions } = await getMailConfig();
+        const mailMessage = getContactMailTemplate(name, productType, email, phone, city, company);
+        const mailOptions = {
+            ...getMailOptions(
+                'ernestodaniellopez504@gmail.com',
+                `Solicitud de servicio - ${name} - ${productType}`),
+            html: mailMessage
         }
-        return { message: 'Error interno al intentar enviar el correo', code: 500 };
-    }
 
+        //Envío
+        await transporter.sendMail(mailOptions);
+        return { message: 'Datos enviados correctamente, En breve nos pondremos en contacto con usted!', code: 200 };
+    } catch (error) {
+        if (error instanceof CustomError) {
+            return { message: error.message, code: error.code };
+        } else {
+            return { message: 'Error interno al intentar enviar los datos, favor intente de nuevo más tarde', code: 500 };
+        }
+    }
 }
 

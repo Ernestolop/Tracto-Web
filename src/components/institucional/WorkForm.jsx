@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react';
 import { Form } from '@/components'
-import { sendWorkHereMail } from '@/helpers';
+import { sendWorkHereMail } from '@/actions';
 
 export const WorkForm = () => {
 

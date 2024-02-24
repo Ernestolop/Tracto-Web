@@ -82,16 +82,15 @@ export const Form = ({ sendData, fields, classNames }) => {
             });
 
             //Enviar al servidor
-            const responde = await sendData();
-            console.log(responde);
-            if (responde.code !== 200) {
-                throw new Error(responde.message);
+            const response = await sendData();
+            if (response.code !== 200) {
+                throw new Error(response.message);
             }
 
-            handleAlert(responde.message);
+            handleAlert(response.message, 'success', 6000);
 
         } catch (error) {
-            handleAlert(error.message, 'error');
+            handleAlert(error.message, 'error', 6000);
         }
 
     }
