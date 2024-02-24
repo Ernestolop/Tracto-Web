@@ -26,7 +26,7 @@ const getMailOptions = (to, subject) => {
 
 const getContactMailTemplate = (name, productType, email, phone, city, company) => {
     return `
-    <p style="font-weight: bold;">Estimado equipo de posventa,</p>
+    <p style="font-weight: bold;">Estimado equipo de Posventa,</p>
     
     <p><span style="font-weight: bold;">${name}</span> quiere agendar un servicio para el tipo de producto <span style="font-weight: bold;">${productType}</span>.</p>
     
@@ -46,6 +46,22 @@ const getContactMailTemplate = (name, productType, email, phone, city, company) 
     `;
 };
 
+const getWorkHereMailTemplate = (name, email, position) => {
+    return `
+    <p style="font-weight: bold;">Estimado equipo de Recursos Humanos,</p>
+    
+    <p><span style="font-weight: bold;">${name}</span> Ha enviado su currículum para el departamento de <span style="font-weight: bold;">${position}</span>.</p>
+    
+    <p>Sus datos de contacto son:</p>
+    <ul>
+        <li><strong>Correo electrónico:</strong> ${email}</li>
+    </ul>
+    
+    <p style="font-weight: bold;">Adjunto a este correo encontrarás el archivo del currículum cargado.</p>
+    `;
+};
+
 export default async function getMailConfig() {
-    return { transporter, getMailOptions, getContactMailTemplate };
+    return { transporter, getMailOptions, getContactMailTemplate, getWorkHereMailTemplate };
 }
+

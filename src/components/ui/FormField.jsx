@@ -24,7 +24,7 @@ export const FormField = ({ modifier, inputId, label, inputName, inputType, plac
                 type={inputType}
                 placeholder={placeholder}
                 value={value}
-                onChange={e => handleChange(e.target.value)}
+                onChange={e => inputType == 'file' ? handleChange(e) : handleChange(e.target.value)}
                 required={required}
                 accept={accept}
             />

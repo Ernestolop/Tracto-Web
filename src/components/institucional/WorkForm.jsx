@@ -9,6 +9,12 @@ export const WorkForm = () => {
     const [email, setEmail] = useState('');
     const [position, setPosition] = useState('');
     const [file, setFile] = useState('');
+    const [selectedFile, setSelectedFile] = useState(null);
+
+    const handleChangeFile = e => {
+        setSelectedFile(e.target.files[0]);
+        setFile(e.target.value);
+    }
 
     const fields = [
 
@@ -74,7 +80,7 @@ export const WorkForm = () => {
             inputType: "file",
             placeholder: "Carga tu CV",
             value: file,
-            handleChange: setFile,
+            handleChange: handleChangeFile,
             required: true,
             validations: {
                 regex: {
@@ -87,24 +93,44 @@ export const WorkForm = () => {
 
     ]
 
-    const  sendData = async () => {
-        const data = {
-            name,
-            email,
-            position,
-            file
+    const sendData = async () => {
+        const fileReaderPromise = new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => {
+                resolve(reader.result);
+            };
+            reader.onerror = reject;
+            reader.readAsDataURL(selectedFile);
+        });
+
+        try {
+            const fileB64 = await fileReaderPromise;
+            if (fileB64.length > 1000000) {
+                return { message: 'El tamaño del archivo excede el límite permitido (1MB)', code: 400 };
+            }
+
+            const data = {
+                name,
+                email,
+                position,
+                file,
+                fileB64
+            };
+
+            const response = await sendWorkHereMail(data);
+
+            if (response.code === 200) {
+                setName('');
+                setEmail('');
+                setPosition('');
+                setSelectedFile(null);
+                setFile('');
+            }
+
+            return response;
+        } catch (error) {
+            return { message: 'Hubo un problema con el archivo subido. Asegurate de que su tamaño no exceda el límite permitido (1MB)', code: 400 };
         }
-
-        const response = await sendWorkHereMail(data);
-
-        if (response.code === 200) {
-            setName('');
-            setEmail('');
-            setPosition('');
-            setFile('');
-        }
-
-        return response;
     }
 
     return (

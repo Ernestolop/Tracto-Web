@@ -60,6 +60,7 @@ export const sendContactMail = async (data) => {
         await transporter.sendMail(mailOptions);
         return { message: 'Datos enviados correctamente, En breve nos pondremos en contacto con usted!', code: 200 };
     } catch (error) {
+        console.log(error)
         if (error instanceof CustomError) {
             return { message: error.message, code: error.code };
         } else {
