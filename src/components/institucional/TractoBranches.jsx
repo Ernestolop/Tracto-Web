@@ -20,9 +20,9 @@ export const TractoBranches = () => {
                 <ul className="branches">
 
                     {
-                        branches.map(branch => {
+                        branches.map((branch, index) => {
                             return (
-                                <li key={branch.city} onClick={() => setBrancheSelected(branch)}>
+                                <li key={branch.city + index} onClick={() => setBrancheSelected(branch)}>
                                     <section className="branches__branch">
                                         <h3 className="branch__city">{branch.city}</h3>
                                         <p className="branches__address">{branch.address}</p>
