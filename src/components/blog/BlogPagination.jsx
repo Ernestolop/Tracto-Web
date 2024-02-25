@@ -1,62 +1,11 @@
 'use client';
-import {  useState } from 'react';
+import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { BlogGrid } from '@/components';
-
-const entrys = [
-    {
-        id: 1,
-        title: "Esta es una novedad de tracto agro vial",
-        preview: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, voluptate...",
-        image: "/images/routetracto.jpg"
-    },
-    {
-        id: 2,
-        title: "Esta es una novedad de tracto agro vial",
-        preview: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, voluptate...",
-        image: "/images/routetracto.jpg"
-    },
-    {
-        id: 3,
-        title: "Esta es una novedad de tracto agro vial",
-        preview: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, voluptate...",
-        image: "/images/routetracto.jpg"
-    },
-    {
-        id: 4,
-        title: "Esta es una novedad de tracto agro vial",
-        preview: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, voluptate...",
-        image: "/images/routetracto.jpg"
-    },
-    {
-        id: 5,
-        title: "Esta es una novedad de tracto agro vial",
-        preview: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, voluptate...",
-        image: "/images/routetracto.jpg"
-    },
-    {
-        id: 6,
-        title: "Esta es una novedad de tracto agro vial",
-        preview: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, voluptate...",
-        image: "/images/routetracto.jpg"
-    },
-    {
-        id: 7,
-        title: "Esta es una novedad de tracto agro vial",
-        preview: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, voluptate...",
-        image: "/images/routetracto.jpg"
-    },
-    {
-        id: 8,
-        title: "Esta es una novedad de tracto agro vial",
-        preview: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, voluptate...",
-        image: "/images/routetracto.jpg"
-    }
-]
+import { entrys } from '@/seed';
 
 export const BlogPagination = ({ entrysPerPage }) => {
     const [entryOffset, setEntryOffset] = useState(0);
-    //Aqui aplicar el fetch
     const endOffset = entryOffset + entrysPerPage;
     const currentEntryes = entrys.slice(entryOffset, endOffset);
     const pageCount = Math.ceil(entrys.length / entrysPerPage);
