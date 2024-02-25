@@ -41,7 +41,6 @@ export const sendWorkHereMail = async (data) => {
         }
 
         //Validar tamaño del CV
-        console.log(fileB64.length)
         if (fileB64.length > fileSizeLimit) {
             throw new CustomError('El tamaño del archivo excede el límite permitido (1MB)', 400);
         }
