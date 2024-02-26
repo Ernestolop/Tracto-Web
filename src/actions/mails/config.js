@@ -4,6 +4,9 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+const contactMailTo = process.env.CONTACT_MAIL_TO;
+const workHereMailTo = process.env.WORK_HERE_MAIL_TO;
+
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -62,6 +65,6 @@ const getWorkHereMailTemplate = (name, email, position) => {
 };
 
 export default async function getMailConfig() {
-    return { transporter, getMailOptions, getContactMailTemplate, getWorkHereMailTemplate };
+    return { transporter, getMailOptions, getContactMailTemplate, getWorkHereMailTemplate, contactMailTo, workHereMailTo };
 }
 

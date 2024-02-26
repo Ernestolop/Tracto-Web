@@ -48,11 +48,11 @@ export const sendWorkHereMail = async (data) => {
         //Datos para el envío
         const fileBuffer = Buffer.from(fileB64.split(';base64,').pop(), 'base64');
         const fileName = file.split('\\').pop();
-        const { transporter, getWorkHereMailTemplate, getMailOptions } = await getMailConfig();
+        const { transporter, getWorkHereMailTemplate, getMailOptions, workHereMailTo } = await getMailConfig();
         const mailMessage = getWorkHereMailTemplate(name, email, position);
         const mailOptions = {
             ...getMailOptions(
-                'ernestodaniellopez504@gmail.com',
+                workHereMailTo,
                 `CV - ${name} - ${position}`),
             html: mailMessage,
             attachments: [

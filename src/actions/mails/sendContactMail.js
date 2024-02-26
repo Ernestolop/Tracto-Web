@@ -47,11 +47,11 @@ export const sendContactMail = async (data) => {
         }
 
         //Datos para el envío
-        const { transporter, getContactMailTemplate, getMailOptions } = await getMailConfig();
+        const { transporter, getContactMailTemplate, getMailOptions, contactMailTo } = await getMailConfig();
         const mailMessage = getContactMailTemplate(name, productType, email, phone, city, company);
         const mailOptions = {
             ...getMailOptions(
-                'ernestodaniellopez504@gmail.com',
+                contactMailTo,
                 `Solicitud de servicio - ${name} - ${productType}`),
             html: mailMessage
         }

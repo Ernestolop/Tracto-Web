@@ -1,4 +1,4 @@
-import { Carrousel, BlogPagination, Aside } from '@/components';
+import { Carrousel, SocialMedia, Aside } from '@/components';
 import { images } from '@/seed';
 
 export const metadata = {
@@ -27,8 +27,8 @@ export default function Home() {
       />
       <div className='landing__background'>
         <div className='landing__container mw-950'>
-          <BlogPagination
-            entrysPerPage={6}
+          <SocialMedia
+            postsPerPage={6}
           />
           <Aside />
         </div>
