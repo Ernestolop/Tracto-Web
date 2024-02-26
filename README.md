@@ -2,7 +2,7 @@
 
 Este proyecto es un sitio web institucional desarrollado con Next.js para Tracto.
 
-## Levantar el proyecto localmente
+## Levantar el proyecto localmente en modo de desarrollo
 
 Antes de comenzar, asegúrate de tener Node.js y npm instalados en tu máquina.
 
@@ -24,7 +24,15 @@ Antes de comenzar, asegúrate de tener Node.js y npm instalados en tu máquina.
     npm install
     ```
 
-4. Para iniciar el servidor de desarrollo:
+4. Copia el archivo .env.template en el mismo directorio y renombra la copia a .env:
+
+   ```bash
+   cp .env.template .env
+   ```
+
+5. Agrega los valores correspondientes a las variables del .env. Solicita los datos de las credenciales necesarias a los encargados del proyecto. No olvides resguardar estos datos ya que son bastante sensibles.
+
+6. Para iniciar el servidor de desarrollo:
 
    ```bash
    npm run dev
