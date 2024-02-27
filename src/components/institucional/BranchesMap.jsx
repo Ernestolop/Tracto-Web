@@ -1,5 +1,6 @@
 'use client';
-import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet';
+import Link from 'next/link';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Icon } from 'leaflet';
 
@@ -22,7 +23,12 @@ const BranchesMap = ({ branches, branchSelected }) => {
                 (
                     <Marker key={branch.city} position={[branch.latitude, branch.longitude]} icon={customIcon}>
                         <Popup>
-                            {branch.city}
+                            <div>
+                                <p>{branch.city}</p>
+                                <Link href={`https://www.google.com/maps/search/?api=1&query=${branch.latitude},${branch.longitude}`} prefetch={false} target="_blank" rel="noopener noreferrer">
+                                    Abrir en Google Maps
+                                </Link>
+                            </div>
                         </Popup>
                     </Marker>
                 ))
