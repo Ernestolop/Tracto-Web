@@ -7,6 +7,7 @@ export const Form = ({ sendData, fields, classNames }) => {
 
 
     const [errorField, setErrorField] = useState(null);
+    const [sending, setSending] = useState(false);
 
     const [alert, setAlert] = useState({
         type: '',
@@ -25,6 +26,7 @@ export const Form = ({ sendData, fields, classNames }) => {
     }
 
     const middlewareForm = async e => {
+        setSending(true);
         e.preventDefault();
         setErrorField(null);
 
@@ -92,7 +94,7 @@ export const Form = ({ sendData, fields, classNames }) => {
         } catch (error) {
             handleAlert(error.message, 'error', 6000);
         }
-
+        setSending(false);
     }
 
     return (
@@ -135,9 +137,10 @@ export const Form = ({ sendData, fields, classNames }) => {
                     )}
                 </div>
                 <input
+                    disabled={sending}
                     type="submit"
-                    value="Enviar"
-                    className="form__submit"
+                    value={sending ? 'Enviando...' : 'Enviar'}
+                    className={`form__submit ${sending ? 'form__submit--sending' : ''}`}
                 />
             </form>
         </>
