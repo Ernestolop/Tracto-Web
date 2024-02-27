@@ -5,7 +5,7 @@ import 'leaflet/dist/leaflet.css';
 import { Icon } from 'leaflet';
 
 const customIcon = new Icon({
-    iconUrl: '/images/map-pin.svg',
+    iconUrl: '/images/icons/map-pin.svg',
     iconSize: [35, 45],
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],

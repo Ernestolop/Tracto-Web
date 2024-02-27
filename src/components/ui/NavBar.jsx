@@ -17,7 +17,7 @@ export const NavBar = () => {
         <div className='navbar mw-950'>
             <Link onClick={() => setMenuOpen(false)} href="/">
                 <Image
-                    src="/images/logo.svg"//TODO: utilizar el url absoluto
+                    src="/images/icons/logo.svg"//TODO: utilizar el url absoluto
                     alt="Logo de tracto agro vial"
                     width={165}
                     height={29}
