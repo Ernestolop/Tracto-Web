@@ -847,6 +847,12 @@
     border-radius: var(--space-md);
 }
 
+.post__video {
+    display: block;
+    margin-inline: auto;
+    border-radius: var(--space-md);
+}
+
 /* Aside */
 .aside {
     display: none;
