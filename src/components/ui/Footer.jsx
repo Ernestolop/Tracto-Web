@@ -16,12 +16,6 @@ export const Footer = () => {
                             <Link href="tel:021111111" prefetch={false} className="contact__link">(021) 555 613</Link>
                         </li>
                         <li className="contact__item">
-                            <svg className='contac__icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.98 47.89">
-                                <path fill="#323232;" d="m23.18,0l-1.41,2.82c-.34.68-1.03,1.11-1.79,1.11h-7.99c-.76,0-1.45-.43-1.79-1.11l-1.41-2.82C3.85.59,0,4.82,0,9.92v27.98c0,5.51,4.48,9.99,9.99,9.99h11.99c5.51,0,9.99-4.48,9.99-9.99V9.92c0-5.1-3.85-9.33-8.79-9.92Zm-5.2,41.9h-4c-1.1,0-2-.9-2-2s.9-2,2-2h4c1.1,0,2,.9,2,2s-.9,2-2,2Z" />
-                            </svg>
-                            <Link href="tel:0971257580" prefetch={false} className="contact__link">(595) xxx xxx xxx</Link>
-                        </li>
-                        <li className="contact__item">
                             <svg className='contac__icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.98 29.31">
                                 <path fill="#323232;" d="m31.91,6.05l-11.22,11.22c-2.6,2.6-6.82,2.6-9.42,0L.06,6.05c-.02.21-.06.4-.06.61v15.99c0,3.68,2.98,6.66,6.66,6.66h18.65c3.68,0,6.66-2.98,6.66-6.66V6.66c0-.21-.04-.4-.06-.61Z" />
                                 <path fill="#323232;" d="m18.82,15.38L30.98,3.21C29.79,1.22,27.64,0,25.31,0H6.66C4.34,0,2.19,1.22.99,3.21l12.17,12.17c1.56,1.56,4.09,1.56,5.65,0Z" />

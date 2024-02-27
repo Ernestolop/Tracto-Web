@@ -61,7 +61,7 @@ export const WorkForm = () => {
             label: "Departamento al que se postula",
             inputName: "position",
             inputType: "text",
-            placeholder: "Nombre de la empresa",
+            placeholder: "Departamento al que se postula",
             value: position,
             handleChange: setPosition,
             required: false,
