@@ -28,7 +28,7 @@ export default function Home() {
       <div className='landing__background'>
         <div className='landing__container mw-950'>
           <SocialMedia
-            postsPerPage={2}
+            postsPerPage={3}
           />
           <Aside />
         </div>
