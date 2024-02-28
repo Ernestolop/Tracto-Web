@@ -10,8 +10,12 @@ import 'swiper/css/autoplay';
 
 // import required modules
 import { Pagination, Autoplay } from 'swiper/modules';
+import { useMediaQuery } from '@react-hook/media-query';
+
 
 export const Carrousel = ({ images }) => {
+    const isSmallScreen = useMediaQuery('(max-width: 500px)');
+
     return (
         <>
             <Swiper
@@ -34,8 +38,9 @@ export const Carrousel = ({ images }) => {
                 {images.map((image, index) => (
                     <SwiperSlide key={index}>
                         <Image
-                            src={image.url}
+                            src={isSmallScreen ? image.urlCel : image.urlDesk}
                             alt={image.alt}
+                            priority
                             width={image.width}
                             height={image.height}
                             className='hero'

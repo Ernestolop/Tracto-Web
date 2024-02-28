@@ -272,12 +272,12 @@
     width: 100%;
     object-fit: cover;
     height: 700px;
-    object-position: 50%;
 }
 
 @media (min-width: 992px) {
     .hero {
         height: auto;
+        max-height: 450px;
     }
 }
 
@@ -851,6 +851,7 @@
     display: block;
     margin-inline: auto;
     border-radius: var(--space-md);
+    border: 0;
 }
 
 /* Aside */
@@ -872,7 +873,7 @@
 
 .aside_temperature,
 .aside_prices {
-    width: 60%;
+    width: 80%;
     background-color: var(--color-primary);
     text-align: center;
     position: relative;

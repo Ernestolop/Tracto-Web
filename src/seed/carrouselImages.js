@@ -1,23 +1,26 @@
 export const images = [
     {
-        url: '/images/carrousel/carrusel1.png',
-        width: 1370,
-        height: 495,
+        urlDesk: '/images/carrousel/carrousel-desk1.png',
+        urlCel: '/images/carrousel/carrousel-cel1.png',
+        width: 1920,
+        height: 1080,
         alt: 'Tractor Carrusel 1',
-        objectPosition: '45%'
+        objectPosition: 'center center'
     },
     {
-        url: '/images/carrousel/carrusel2.png',
-        width: 1370,
-        height: 495,
+        urlDesk: '/images/carrousel/carrousel-desk2.png',
+        urlCel: '/images/carrousel/carrousel-cel2.png',
+        width: 1920,
+        height: 1080,
         alt: 'Tractor Carrusel 2',
-        objectPosition: '69%'
+        objectPosition: 'center center'
     },
     {
-        url: '/images/carrousel/carrusel3.png',
-        width: 1370,
-        height: 495,
+        urlDesk: '/images/carrousel/carrousel-desk3.png',
+        urlCel: '/images/carrousel/carrousel-cel3.png',
+        width: 1920,
+        height: 1080,
         alt: 'Tractor Carrusel 3',
-        objectPosition: '60%'
+        objectPosition: 'center center'
     }
 ]
